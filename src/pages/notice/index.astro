@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { getNotices, formatDate } from '../../lib/content';
+import { url } from '../../lib/paths';
+const notices = getNotices();
+---
+<BaseLayout title="Notice" description="나노탄소재료 연구실 공지사항">
+  <PageHeader title="Notice" subtitle="공지사항" crumbs={[{ label: 'Notice' }]} />
+  <section class="section">
+    <div class="container narrow">
+      {notices.length ? (
+        <ul class="notice-list">
+          {notices.map((n) => (
+            <li>
+              <a href={url(`/notice/${n.slug}/`)}>
+                <strong>{n.pinned && <span class="pin">고정</span>}{n.title}</strong>
+                <time datetime={n.date}>{formatDate(n.date)}</time>
+                {n.summary && <p>{n.summary}</p>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div class="empty"><p>등록된 공지사항이 없습니다.</p></div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

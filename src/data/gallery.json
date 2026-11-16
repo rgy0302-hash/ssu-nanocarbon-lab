@@ -1,0 +1,204 @@
+{
+  "albums": [
+    {
+      "id": "2026-semester-dinner",
+      "title": "2026 개강 기념 회식",
+      "date": "",
+      "description": "",
+      "photos": [
+        {
+          "src": "/images/gallery/2026-semester-dinner/01.jpg",
+          "alt": "2026 개강 기념 회식 사진 1",
+          "caption": "",
+          "focus": "50% 50%"
+        }
+      ]
+    },
+    {
+      "id": "2026-graduate-entrance",
+      "title": "2026 대학원 입학식",
+      "date": "",
+      "description": "정지원과 정해정이 입학을 했습니다",
+      "photos": [
+        {
+          "src": "/images/gallery/2026-graduate-entrance/01.jpg",
+          "alt": "2026 대학원 입학식 사진 1",
+          "caption": "",
+          "focus": "50% 50%"
+        },
+        {
+          "src": "/images/gallery/2026-graduate-entrance/02.jpg",
+          "alt": "2026 대학원 입학식 사진 2",
+          "caption": "",
+          "focus": "50% 50%"
+        }
+      ]
+    },
+    {
+      "id": "2025-semester-end-dinner",
+      "title": "2025 종강 기념 회식",
+      "date": "",
+      "description": "",
+      "photos": [
+        {
+          "src": "/images/gallery/2025-semester-end-dinner/01.jpg",
+          "alt": "2025 종강 기념 회식 사진 1",
+          "caption": "",
+          "focus": "50% 50%"
+        }
+      ]
+    },
+    {
+      "id": "2025-ksfe-busan",
+      "title": "2025 한국섬유공학회 in 부산",
+      "date": "",
+      "description": "산학프로젝트 우수상을 수상했습니다~",
+      "photos": [
+        {
+          "src": "/images/gallery/2025-ksfe-busan/01.jpg",
+          "alt": "2025 한국섬유공학회 in 부산 사진 1",
+          "caption": "",
+          "focus": "50% 50%"
+        },
+        {
+          "src": "/images/gallery/2025-ksfe-busan/02.jpg",
+          "alt": "2025 한국섬유공학회 in 부산 사진 2",
+          "caption": "",
+          "focus": "50% 50%"
+        },
+        {
+          "src": "/images/gallery/2025-ksfe-busan/03.jpg",
+          "alt": "2025 한국섬유공학회 in 부산 사진 3",
+          "caption": "",
+          "focus": "50% 50%"
+        }
+      ]
+    },
+    {
+      "id": "2025-teachers-day",
+      "title": "2025 스승의날",
+      "date": "",
+      "description": "",
+      "photos": [
+        {
+          "src": "/images/gallery/2025-teachers-day/01.jpg",
+          "alt": "2025 스승의날 사진 1",
+          "caption": "",
+          "focus": "50% 50%"
+        },
+        {
+          "src": "/images/gallery/2025-teachers-day/02.jpg",
+          "alt": "2025 스승의날 사진 2",
+          "caption": "",
+          "focus": "50% 50%"
+        },
+        {
+          "src": "/images/gallery/2025-teachers-day/03.jpg",
+          "alt": "2025 스승의날 사진 3",
+          "caption": "",
+          "focus": "50% 50%"
+        }
+      ]
+    },
+    {
+      "id": "2026-workshop-sokcho",
+      "title": "2026 워크샵 in 속초",
+      "date": "",
+      "description": "바다에 빠진 남현진",
+      "photos": [
+        {
+          "src": "/images/gallery/2026-workshop-sokcho/01.jpg",
+          "alt": "2026 워크샵 in 속초 사진 1",
+          "caption": "",
+          "focus": "50% 50%"
+        },
+        {
+          "src": "/images/gallery/2026-workshop-sokcho/02.jpg",
+          "alt": "2026 워크샵 in 속초 사진 2",
+          "caption": "",
+          "focus": "50% 50%"
+        },
+        {
+          "src": "/images/gallery/2026-workshop-sokcho/03.jpg",
+          "alt": "2026 워크샵 in 속초 사진 3",
+          "caption": "",
+          "focus": "50% 50%"
+        }
+      ]
+    },
+    {
+      "id": "2025-graduation",
+      "title": "2025 학위수여식",
+      "date": "",
+      "description": "",
+      "photos": [
+        {
+          "src": "/images/gallery/2025-graduation/01.jpg",
+          "alt": "2025 학위수여식 사진 1",
+          "caption": "",
+          "focus": "50% 50%"
+        }
+      ]
+    },
+    {
+      "id": "2025-materials-day",
+      "title": "2025 신소재의 날",
+      "date": "",
+      "description": "정지원 은상 수상을 축하합니다~",
+      "photos": [
+        {
+          "src": "/images/gallery/2025-materials-day/01.jpg",
+          "alt": "2025 신소재의 날 사진 1",
+          "caption": "",
+          "focus": "50% 50%"
+        }
+      ]
+    },
+    {
+      "id": "2025-prof-20th-anniversary",
+      "title": "정영진 교수님 장기근속 20주년 기념 행사",
+      "date": "2025.10.15",
+      "description": "",
+      "photos": [
+        {
+          "src": "/images/gallery/2025-prof-20th-anniversary/01.jpg",
+          "alt": "정영진 교수님 장기근속 20주년 기념 행사 사진 1",
+          "caption": "",
+          "focus": "50% 50%"
+        },
+        {
+          "src": "/images/gallery/2025-prof-20th-anniversary/02.jpg",
+          "alt": "정영진 교수님 장기근속 20주년 기념 행사 사진 2",
+          "caption": "",
+          "focus": "50% 50%"
+        }
+      ]
+    },
+    {
+      "id": "2025-kecs-jeju",
+      "title": "2025 한국전기화학회 in 제주도",
+      "date": "",
+      "description": "",
+      "photos": [
+        {
+          "src": "/images/gallery/2025-kecs-jeju/01.jpg",
+          "alt": "2025 한국전기화학회 in 제주도 사진 1",
+          "caption": "",
+          "focus": "50% 50%"
+        },
+        {
+          "src": "/images/gallery/2025-kecs-jeju/02.jpg",
+          "alt": "2025 한국전기화학회 in 제주도 사진 2",
+          "caption": "",
+          "focus": "50% 50%"
+        },
+        {
+          "src": "/images/gallery/2025-kecs-jeju/03.jpg",
+          "alt": "2025 한국전기화학회 in 제주도 사진 3",
+          "caption": "",
+          "focus": "50% 50%"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
+import Img from '../../components/Img.astro';
+import p from '../../data/professor.json';
+---
+<BaseLayout title={`Professor · ${p.name}`} description={`${p.name} 교수 — ${p.department}. 학력, 경력, 연구 분야, 연락처`}>
+  <PageHeader title="Professor" crumbs={[{ label: 'Members', href: '/members/' }, { label: 'Professor' }]} />
+  <SubNav section="/members/" />
+  <section class="section">
+    <div class="container">
+      <div class="prof">
+        <div class="prof__photo"><Img src={p.photo.src} alt={p.photo.alt} ratio="3 / 4" focus={p.photo.focus} kind="person" loading="eager" /></div>
+        <div>
+          <h2 class="prof__name">{p.name}{p.nameEn && <span class="member__en">{p.nameEn}</span>}</h2>
+          <p class="prof__role">{p.title} · {p.department}</p>
+          <dl class="info-list">
+            <div><dt>이메일</dt><dd><a href={`mailto:${p.email}`}>{p.email}</a></dd></div>
+            <div><dt>전화</dt><dd><a href={`tel:+82-${p.phone.replace(/^0/, '')}`}>{p.phone}</a></dd></div>
+            <div><dt>연구실</dt><dd>{p.office}</dd></div>
+            <div><dt>주소</dt><dd>{p.address}</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="prof-sections">
+        <section>
+          <h2>학력 <small class="muted small">Education</small></h2>
+          <ul class="timeline">
+            {p.education.map((e) => <li><strong>{e.degree}</strong> {e.school} {e.major}{e.year && <span class="muted">{e.year}</span>}</li>)}
+          </ul>
+        </section>
+        <section>
+          <h2>경력 <small class="muted small">Career</small></h2>
+          <ul class="timeline">
+            {p.career.map((c) => <li><strong>{c.org}</strong> {c.position}{c.period && <span class="muted">{c.period}</span>}</li>)}
+          </ul>
+        </section>
+        <section>
+          <h2>연구 분야 <small class="muted small">Research Interests</small></h2>
+          <ul class="check-list">{p.researchInterests.map((r) => <li>{r}</li>)}</ul>
+        </section>
+        <section>
+          <h2>산학협력 분야 <small class="muted small">Industry Collaboration</small></h2>
+          <ul class="check-list">{p.industryAreas.map((r) => <li>{r}</li>)}</ul>
+        </section>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

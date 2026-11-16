@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
+import Img from '../../components/Img.astro';
+import data from '../../data/members.json';
+const groups = data.groups.map((g) => ({ ...g, list: data.members.filter((m) => m.group === g.id) })).filter((g) => g.list.length);
+---
+<BaseLayout title="Current Members" description="나노탄소재료 연구실 현재 구성원 — 박사과정, 석사과정, 학부연구생">
+  <PageHeader title="Current" subtitle={`현재 구성원 ${data.members.length}명`} crumbs={[{ label: 'Members', href: '/members/' }, { label: 'Current' }]} />
+  <SubNav section="/members/" />
+  <section class="section">
+    <div class="container">
+      {groups.map((g) => (
+        <section class="member-group" aria-labelledby={`g-${g.id}`}>
+          <h2 id={`g-${g.id}`}>{g.label} <small>{g.labelKo} · {g.list.length}명</small></h2>
+          <ul class="member-grid">
+            {g.list.map((m) => (
+              <li class="member">
+                <Img src={m.photo?.src} alt={m.photo?.alt || `${m.name} 사진`} ratio="3 / 4" focus={m.photo?.focus} kind="person" />
+                <h3>{m.name}<span class="member__en">{m.nameEn}</span></h3>
+                <span class="member__course">{m.course}</span>
+                {m.research && <p class="member__research">{m.research}</p>}
+                {m.email && <a class="member__email" href={`mailto:${m.email}`}>{m.email}</a>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

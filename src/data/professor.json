@@ -1,0 +1,89 @@
+{
+  "name": "정영진",
+  "nameEn": "",
+  "title": "교수",
+  "department": "숭실대학교 신소재공학과",
+  "photo": {
+    "src": "/images/members/professor.jpg",
+    "alt": "정영진 교수 사진",
+    "focus": "50% 25%"
+  },
+  "email": "yjeong@ssu.ac.kr",
+  "phone": "02-820-0667",
+  "office": "형남공학관 805호",
+  "address": "서울특별시 동작구 상도로 369 숭실대학교 신소재공학과",
+  "education": [
+    {
+      "degree": "학사 (B.S.)",
+      "major": "섬유공학과",
+      "school": "서울대학교",
+      "year": ""
+    },
+    {
+      "degree": "석사 (M.S.)",
+      "major": "섬유고분자공학",
+      "school": "서울대학교",
+      "year": ""
+    },
+    {
+      "degree": "박사 (Ph.D.)",
+      "major": "섬유고분자공학",
+      "school": "서울대학교",
+      "year": ""
+    }
+  ],
+  "career": [
+    {
+      "position": "Researcher",
+      "org": "CSIRO, Australia",
+      "period": ""
+    },
+    {
+      "position": "교수",
+      "org": "금오공과대학교",
+      "period": ""
+    },
+    {
+      "position": "Visiting Professor",
+      "org": "Georgia Institute of Technology",
+      "period": ""
+    },
+    {
+      "position": "Visiting Professor",
+      "org": "Cornell University",
+      "period": ""
+    },
+    {
+      "position": "회장",
+      "org": "한국섬유공학회",
+      "period": ""
+    },
+    {
+      "position": "공과대학장",
+      "org": "숭실대학교",
+      "period": ""
+    },
+    {
+      "position": "교수",
+      "org": "숭실대학교 신소재공학과",
+      "period": ""
+    }
+  ],
+  "researchInterests": [
+    "탄소나노튜브(CNT) 집합체 합성 공정 및 기계적·전기적 특성 향상",
+    "CNT 기반 무음극 전고체 배터리",
+    "CNT 집합체를 이용한 초경량 전자파 차폐 시트",
+    "수전해 및 연료전지 기체확산층(GDL)용 CNT 박막 시트",
+    "경량 파워케이블용 CNT 섬유",
+    "초경량 방탄복 및 레이더/적외선 복합 스텔스"
+  ],
+  "industryAreas": [
+    "CNT 집합체(섬유·필름) 대량생산 기술",
+    "CNT 집합체 기반 무음극 전고체 배터리",
+    "초경량 방탄복 제조 기술",
+    "연료전지 GDL 및 수전해용 전극",
+    "초경량 전자파/적외선 복합 차폐 소재",
+    "고효율 발열체"
+  ],
+  "_note": "학력·경력 연도와 영문 이름은 원본 페이지에 없어 비워 두었습니다. 확인되면 year / period / nameEn 에 입력하세요."
+}

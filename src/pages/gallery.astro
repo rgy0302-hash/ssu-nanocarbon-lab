@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Img from '../components/Img.astro';
+import gallery from '../data/gallery.json';
+const albums = gallery.albums;
+---
+<BaseLayout title="Gallery" description="나노탄소재료 연구실 행사·활동 사진">
+  <PageHeader title="Gallery" subtitle={`행사 앨범 ${albums.length}개 · 사진을 누르면 크게 볼 수 있습니다`} crumbs={[{ label: 'Gallery' }]} />
+  <section class="section">
+    <div class="container">
+      <nav aria-label="앨범 바로가기">
+        <ul class="album-index">
+          {albums.map((a) => <li><a href={`#${a.id}`}>{a.title}</a></li>)}
+        </ul>
+      </nav>
+      {albums.map((a) => (
+        <section class="album" id={a.id} aria-labelledby={`t-${a.id}`}>
+          <div class="album__head">
+            <h2 id={`t-${a.id}`}>{a.title}</h2>
+            <span class="album__meta">{a.date && <time>{a.date}</time>}{a.date && ' · '}사진 {a.photos.length}장</span>
+          </div>
+          {a.description && <p class="album__desc">{a.description}</p>}
+          <ul class="thumbs">
+            {a.photos.map((ph) => (
+              <li><Img src={ph.src} alt={ph.alt} caption={undefined} ratio="4 / 3" focus={ph.focus} lightbox={a.id} /></li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { getNotices, formatDate } from '../../lib/content';
+import { url } from '../../lib/paths';
+
+export function getStaticPaths() {
+  return getNotices().map((n) => ({ params: { slug: n.slug }, props: { n } }));
+}
+const { n } = Astro.props;
+const { Content } = n;
+---
+<BaseLayout title={n.title} description={n.summary || n.title}>
+  <PageHeader title={n.title} crumbs={[{ label: 'Notice', href: '/notice/' }, { label: '공지' }]}>
+    <p class="page-head__sub"><time datetime={n.date}>{formatDate(n.date)}</time></p>
+  </PageHeader>
+  <section class="section">
+    <div class="container narrow">
+      <article class="prose"><Content /></article>
+      {n.attachments && n.attachments.length > 0 && (
+        <div class="attachments">
+          <h2>첨부파일</h2>
+          <ul>{n.attachments.map((f) => <li><a href={url(f.file)} download>{f.label}</a></li>)}</ul>
+        </div>
+      )}
+      <p style="margin-top:40px"><a class="btn btn--ghost" href={url('/notice/')}>← 목록으로</a></p>
+    </div>
+  </section>
+</BaseLayout>

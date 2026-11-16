@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
+import Img from '../../components/Img.astro';
+import { getResearch } from '../../lib/content';
+import { url } from '../../lib/paths';
+const research = getResearch();
+---
+<BaseLayout title="Research" description="나노탄소재료 연구실 연구 분야 — CNT Assembly, CNT Heating Element, Wearable Battery, Bulletproof">
+  <PageHeader title="Research" subtitle="탄소나노튜브 섬유·필름의 연속 제조와 응용" crumbs={[{ label: 'Research' }]} />
+  <SubNav section="/research/" />
+  <section class="section">
+    <div class="container research-rows">
+      {research.map((r) => (
+        <article class="research-row">
+          <div class="research-row__media"><Img src={r.cover?.src} alt={r.cover?.alt || r.title} ratio="16 / 10" fit={r.cover?.fit || 'cover'} /></div>
+          <div>
+            <span class="eyebrow">{String(r.order).padStart(2, '0')}</span>
+            <h2>{r.title}</h2>
+            <p class="research-row__ko">{r.titleKo}</p>
+            <p>{r.summary}</p>
+            <a class="btn btn--ghost" href={url(`/research/${r.slug}/`)}>{r.title} 자세히 보기</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
+import alumni from '../../data/alumni.json';
+
+type A = { name: string; year: number | null; degree: string; topic: string; affiliation: string };
+const list = alumni as A[];
+const years = [...new Set(list.map((a) => a.year).filter((y): y is number => !!y))].sort((a, b) => b - a);
+const groups = [
+  ...years.map((y) => ({ key: String(y), label: `${y}`, items: list.filter((a) => a.year === y) })),
+  { key: 'unknown', label: years.length ? '졸업 연도 미확인' : '졸업생 명단', items: list.filter((a) => !a.year) },
+].filter((g) => g.items.length);
+---
+<BaseLayout title="Alumni" description="나노탄소재료 연구실 졸업생 — 연구 주제와 진로">
+  <PageHeader title="Alumni" subtitle={`졸업생 ${list.length}명`} crumbs={[{ label: 'Members', href: '/members/' }, { label: 'Alumni' }]} />
+  <SubNav section="/members/" />
+  <section class="section">
+    <div class="container">
+      <div class="toolbar" data-filter-root>
+        <div>
+          <label for="al-q">이름·연구 주제·진로 검색</label>
+          <input id="al-q" class="input" type="search" placeholder="예: 전고체, 삼성SDI" data-q />
+        </div>
+        {years.length > 0 && (
+          <div>
+          <label for="al-y">졸업 연도</label>
+          <select id="al-y" class="select" data-year>
+            <option value="">전체</option>
+            {groups.map((g) => <option value={g.key}>{g.label} ({g.items.length})</option>)}
+          </select>
+        </div>
+        )}
+        <button type="button" class="btn btn--ghost" data-reset>초기화</button>
+      </div>
+      {/* 졸업 연도(year)가 비어 있으면 연도 선택 상자는 숨겨지고, 연도를 입력하면 자동으로 연도별 묶음이 생깁니다. */}
+      <p class="result-count" aria-live="polite" data-count>총 {list.length}명</p>
+      {groups.map((g) => (
+        <section class="year-group" data-group={g.key}>
+          <h2>{g.label} <small data-group-count>{g.items.length}명</small></h2>
+          <div class="alum-head" aria-hidden="true"><span>이름</span><span>연구 주제</span><span>진로</span></div>
+          <ul class="pub-list">
+            {g.items.map((a) => (
+              <li class="alum" data-item data-text={`${a.name} ${a.topic} ${a.affiliation} ${a.degree}`.toLowerCase()}>
+                <span class="alum__name">{a.name}{a.degree && <span class="member__en">{a.degree}</span>}</span>
+                <span class="alum__topic">{a.topic}</span>
+                <span class="alum__aff">{a.affiliation || '—'}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+      <div class="empty" hidden data-empty><p>검색 결과가 없습니다.</p></div>
+    </div>
+  </section>
+</BaseLayout>
+<script>
+  import { setupFilter } from '../../scripts/filter';
+  setupFilter({ unit: '명' });
+</script>

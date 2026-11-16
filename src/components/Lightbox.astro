@@ -1,0 +1,104 @@
+---
+/* 사진 크게 보기 (갤러리·연구 이미지 공용). data-lightbox="그룹명" 이 붙은 버튼을 누르면 열립니다. */
+---
+<dialog class="lightbox" aria-label="사진 크게 보기" data-lb>
+  <div class="lightbox__top">
+    <p class="lightbox__count" aria-live="polite" data-lb-count></p>
+    <button type="button" class="lightbox__btn lightbox__close" data-lb-close aria-label="닫기 (Esc)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+    </button>
+  </div>
+  <div class="lightbox__stage" data-lb-stage>
+    <button type="button" class="lightbox__btn lightbox__nav lightbox__prev" data-lb-prev aria-label="이전 사진 (←)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
+    </button>
+    <div class="lightbox__media" data-lb-media></div>
+    <button type="button" class="lightbox__btn lightbox__nav lightbox__next" data-lb-next aria-label="다음 사진 (→)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+    </button>
+  </div>
+  <p class="lightbox__caption" data-lb-caption></p>
+</dialog>
+
+<script>
+  const dlg = document.querySelector<HTMLDialogElement>('[data-lb]');
+  if (dlg) {
+    const media = dlg.querySelector<HTMLElement>('[data-lb-media]')!;
+    const count = dlg.querySelector<HTMLElement>('[data-lb-count]')!;
+    const caption = dlg.querySelector<HTMLElement>('[data-lb-caption]')!;
+    const prev = dlg.querySelector<HTMLButtonElement>('[data-lb-prev]')!;
+    const next = dlg.querySelector<HTMLButtonElement>('[data-lb-next]')!;
+    let items: HTMLElement[] = [];
+    let index = 0;
+    let opener: HTMLElement | null = null;
+
+    function render() {
+      const el = items[index];
+      const src = el.dataset.src || '';
+      const alt = el.dataset.alt || '';
+      const cap = el.dataset.caption || alt;
+      media.replaceChildren();
+      if (src) {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = alt;
+        media.appendChild(img);
+      } else {
+        const ph = document.createElement('div');
+        ph.className = 'lightbox__ph';
+        ph.setAttribute('role', 'img');
+        ph.setAttribute('aria-label', `${alt} (이미지 준비 중)`);
+        ph.textContent = '이미지 준비 중';
+        media.appendChild(ph);
+      }
+      count.textContent = `${index + 1} / ${items.length}`;
+      caption.textContent = cap;
+      const multi = items.length > 1;
+      prev.hidden = !multi;
+      next.hidden = !multi;
+    }
+    function go(step: number) {
+      if (items.length < 2) return;
+      index = (index + step + items.length) % items.length;
+      render();
+    }
+    document.addEventListener('click', (e) => {
+      const t = (e.target as HTMLElement).closest<HTMLElement>('[data-lightbox]');
+      if (!t) return;
+      e.preventDefault();
+      const group = t.dataset.lightbox;
+      items = Array.from(document.querySelectorAll<HTMLElement>(`[data-lightbox="${CSS.escape(group || '')}"]`));
+      index = Math.max(0, items.indexOf(t));
+      opener = t;
+      render();
+      dlg.showModal();
+      document.documentElement.classList.add('nav-locked');
+      dlg.querySelector<HTMLButtonElement>('[data-lb-close]')?.focus();
+    });
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    dlg.querySelector('[data-lb-close]')?.addEventListener('click', () => dlg.close());
+    dlg.addEventListener('close', () => {
+      document.documentElement.classList.remove('nav-locked');
+      opener?.focus();
+    });
+    // 바깥(어두운 배경) 클릭 시 닫기
+    dlg.addEventListener('click', (e) => {
+      if (e.target === dlg || (e.target as HTMLElement).matches('[data-lb-stage], [data-lb-media]')) dlg.close();
+    });
+    dlg.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+    });
+    // 터치 스와이프
+    let x0: number | null = null;
+    const stage = dlg.querySelector<HTMLElement>('[data-lb-stage]')!;
+    stage.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener('touchend', (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 50) go(dx > 0 ? -1 : 1);
+      x0 = null;
+    });
+  }
+</script>

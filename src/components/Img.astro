@@ -1,0 +1,62 @@
+---
+/**
+ * 이미지 표시 컴포넌트
+ * - 파일이 있으면 사진을, 없으면 '이미지 준비 중' 상자를 보여 줍니다(깨진 아이콘 없음).
+ * - fit="cover"   : 틀에 꽉 차게(인물·행사 사진). focus 로 잘릴 때 중심 위치 지정 (예: "50% 20%")
+ * - fit="contain" : 잘리지 않게 전체 표시(연구 도식·그래프)
+ * - ratio         : 틀 비율 (예: "4 / 3", "1 / 1", "16 / 9", "3 / 4")
+ * - lightbox      : 같은 그룹 이름을 주면 클릭 시 크게 보기 + 이전/다음 이동
+ */
+import { resolveImage } from '../lib/images';
+import { url } from '../lib/paths';
+
+interface Props {
+  src?: string;
+  alt: string;
+  fit?: 'cover' | 'contain';
+  focus?: string;
+  ratio?: string;
+  caption?: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  kind?: 'image' | 'person';
+  lightbox?: string;
+}
+const { src, alt, fit = 'cover', focus = '50% 50%', ratio = '4 / 3', caption, class: cls = '', loading = 'lazy', kind = 'image', lightbox } = Astro.props;
+const found = resolveImage(src);
+const finalSrc = found ? url(found) : '';
+const isDev = import.meta.env.DEV;
+---
+<figure class:list={['media', `media--${fit}`, cls]} style={`--ratio:${ratio}`}>
+  {lightbox ? (
+    <button type="button" class="media__frame media__btn" data-lightbox={lightbox} data-src={finalSrc} data-alt={alt} data-caption={caption || ''} aria-label={`${alt} 크게 보기`}>
+      {found ? <img src={finalSrc} alt={alt} loading={loading} decoding="async" style={`object-position:${focus}`} /> : (
+        <span class="media__ph" data-missing={src}>
+          {kind === 'person' ? (
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="18" r="8" /><path d="M8 42c2-9 9-14 16-14s14 5 16 14" /></svg>
+          ) : (
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="30" rx="3" /><circle cx="17" cy="19" r="4" /><path d="M6 33l10-9 8 7 6-5 12 9" /></svg>
+          )}
+          <span class="media__ph-text">이미지 준비 중</span>
+          {isDev && src && <code class="media__ph-path">{src}</code>}
+        </span>
+      )}
+      <span class="media__zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></span>
+    </button>
+  ) : (
+    <div class="media__frame">
+      {found ? <img src={finalSrc} alt={alt} loading={loading} decoding="async" style={`object-position:${focus}`} /> : (
+        <span class="media__ph" role="img" aria-label={`${alt} (이미지 준비 중)`} data-missing={src}>
+          {kind === 'person' ? (
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="18" r="8" /><path d="M8 42c2-9 9-14 16-14s14 5 16 14" /></svg>
+          ) : (
+            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="30" rx="3" /><circle cx="17" cy="19" r="4" /><path d="M6 33l10-9 8 7 6-5 12 9" /></svg>
+          )}
+          <span class="media__ph-text" aria-hidden="true">{kind === 'person' ? '사진 준비 중' : '이미지 준비 중'}</span>
+          {isDev && src && <code class="media__ph-path" aria-hidden="true">{src}</code>}
+        </span>
+      )}
+    </div>
+  )}
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

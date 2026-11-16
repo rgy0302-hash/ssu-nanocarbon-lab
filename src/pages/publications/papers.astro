@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
+import papers from '../../data/papers.json';
+
+type Paper = { no: number; year: number; title: string; authors: string; journal: string; detail: string; link: string; note?: string };
+// 같은 연도 안에서는 papers.json 에 적힌 순서(위쪽이 먼저)대로 표시
+const list = (papers as Paper[]).map((p, i) => ({ ...p, i }));
+const years = [...new Set(list.map((p) => p.year))].sort((a, b) => b - a);
+const groups = years.map((y) => ({ year: y, items: list.filter((p) => p.year === y).sort((a, b) => a.i - b.i) }));
+// 표시 번호: 최신 논문이 가장 큰 번호 (총 n편 → n, n-1, …)
+const ordered = groups.flatMap((g) => g.items);
+const numberOf = new Map(ordered.map((p, k) => [p.i, ordered.length - k]));
+---
+<BaseLayout title="Papers" description={`나노탄소재료 연구실 논문 ${list.length}편 — 연도별 목록, 제목·저자 검색`}>
+  <PageHeader title="Papers" subtitle={`총 ${list.length}편 · ${years[years.length - 1]}–${years[0]}`} crumbs={[{ label: 'Publication', href: '/publications/' }, { label: 'Papers' }]} />
+  <SubNav section="/publications/" />
+  <section class="section">
+    <div class="container">
+      <div class="toolbar">
+        <div>
+          <label for="pp-q">제목·저자·학술지 검색</label>
+          <input id="pp-q" class="input" type="search" placeholder="예: fuel cell, Çakmakçı, Carbon" data-q autocomplete="off" />
+        </div>
+        <div>
+          <label for="pp-y">연도</label>
+          <select id="pp-y" class="select" data-year>
+            <option value="">전체 연도</option>
+            {groups.map((g) => <option value={String(g.year)}>{g.year} ({g.items.length}편)</option>)}
+          </select>
+        </div>
+        <button type="button" class="btn btn--ghost" data-reset>초기화</button>
+      </div>
+
+      <nav aria-label="연도 바로가기">
+        <ul class="year-jump">
+          {groups.map((g) => <li><a href={`#y${g.year}`}>{g.year}</a></li>)}
+        </ul>
+      </nav>
+
+      <p class="result-count" aria-live="polite" data-count>총 {list.length}편</p>
+
+      {groups.map((g) => (
+        <section class="year-group" id={`y${g.year}`} data-group={String(g.year)} aria-labelledby={`h${g.year}`}>
+          <h2 id={`h${g.year}`}>{g.year} <small data-group-count>{g.items.length}편</small></h2>
+          <ol class="pub-list">
+            {g.items.map((p) => (
+              <li class="pub" data-item data-text={`${p.title} ${p.authors} ${p.journal} ${p.year}`.toLowerCase()}>
+                <span class="pub__no">[{numberOf.get(p.i)}]</span>
+                <div>
+                  <p class="pub__title">
+                    {p.link ? (
+                      <a href={p.link} target="_blank" rel="noopener">{p.title}<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" /></svg><span class="sr-only"> (원문, 새 창)</span></a>
+                    ) : p.title}
+                  </p>
+                  <p class="pub__authors">{p.authors}</p>
+                  <p class="pub__venue">{p.journal && <em>{p.journal}</em>}{p.detail && `${p.journal ? ', ' : ''}${p.detail}`} ({p.year})</p>
+                  {p.note && <span class="pub__note">{p.note}</span>}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+      <div class="empty" hidden data-empty><p>검색 결과가 없습니다. 다른 검색어를 입력하거나 초기화를 눌러 주세요.</p></div>
+    </div>
+  </section>
+</BaseLayout>
+<script>
+  import { setupFilter } from '../../scripts/filter';
+  setupFilter({ unit: '편' });
+</script>

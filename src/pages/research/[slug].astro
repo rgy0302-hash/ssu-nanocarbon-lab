@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
+import Img from '../../components/Img.astro';
+import { getResearch } from '../../lib/content';
+import { url } from '../../lib/paths';
+
+export function getStaticPaths() {
+  const all = getResearch();
+  return all.map((r, i) => ({ params: { slug: r.slug }, props: { r, prev: all[i - 1] ?? null, next: all[i + 1] ?? null } }));
+}
+const { r, prev, next } = Astro.props;
+const { Content } = r;
+---
+<BaseLayout title={`${r.title} · ${r.titleKo}`} description={r.summary}>
+  <PageHeader title={r.title} subtitle={r.titleKo} crumbs={[{ label: 'Research', href: '/research/' }, { label: r.title }]} />
+  <SubNav section="/research/" />
+  <section class="section">
+    <div class="container">
+      <div class="prose lead"><Content /></div>
+      {r.images?.length > 0 && (
+        <>
+          <h2 style="margin-top:48px">연구 이미지</h2>
+          <p class="muted small">이미지를 누르면 크게 볼 수 있습니다.</p>
+          <div class="figures">
+            {r.images.map((im: any) => (
+              <Img src={im.src} alt={im.alt} caption={im.caption} fit={im.fit || 'contain'} focus={im.focus} ratio="4 / 3" lightbox={`research-${r.slug}`} />
+            ))}
+          </div>
+        </>
+      )}
+      <nav class="research-nav" aria-label="다른 연구 분야">
+        {prev && <a href={url(`/research/${prev.slug}/`)}><span>← 이전 연구</span>{prev.title}</a>}
+        {next && <a class="next" href={url(`/research/${next.slug}/`)}><span>다음 연구 →</span>{next.title}</a>}
+      </nav>
+    </div>
+  </section>
+</BaseLayout>

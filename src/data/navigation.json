@@ -1,0 +1,80 @@
+[
+  {
+    "label": "Home",
+    "href": "/"
+  },
+  {
+    "label": "About us",
+    "href": "/about/"
+  },
+  {
+    "label": "Members",
+    "href": "/members/",
+    "children": [
+      {
+        "label": "Professor",
+        "href": "/members/professor/"
+      },
+      {
+        "label": "Current",
+        "href": "/members/current/"
+      },
+      {
+        "label": "Alumni",
+        "href": "/members/alumni/"
+      }
+    ]
+  },
+  {
+    "label": "Research",
+    "href": "/research/",
+    "children": [
+      {
+        "label": "CNT Assembly",
+        "href": "/research/cnt-assembly/"
+      },
+      {
+        "label": "CNT Heating Element",
+        "href": "/research/cnt-heating-element/"
+      },
+      {
+        "label": "Wearable Battery",
+        "href": "/research/wearable-battery/"
+      },
+      {
+        "label": "Bulletproof",
+        "href": "/research/bulletproof/"
+      }
+    ]
+  },
+  {
+    "label": "Publication",
+    "href": "/publications/",
+    "children": [
+      {
+        "label": "Papers",
+        "href": "/publications/papers/"
+      },
+      {
+        "label": "Patents",
+        "href": "/publications/patents/"
+      }
+    ]
+  },
+  {
+    "label": "Videos",
+    "href": "/videos/"
+  },
+  {
+    "label": "Gallery",
+    "href": "/gallery/"
+  },
+  {
+    "label": "Notice",
+    "href": "/notice/"
+  },
+  {
+    "label": "Contact us",
+    "href": "/contact/"
+  }
+]

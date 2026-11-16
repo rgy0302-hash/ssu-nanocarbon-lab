@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
+import Img from '../../components/Img.astro';
+import images from '../../data/images.json';
+import members from '../../data/members.json';
+import alumni from '../../data/alumni.json';
+import professor from '../../data/professor.json';
+import { url } from '../../lib/paths';
+const L = images.membersLanding;
+const cards = [
+  { title: 'Professor', href: '/members/professor/', img: L.professor, desc: `${professor.name} 교수 · ${professor.department}`, kind: 'person' },
+  { title: 'Current', href: '/members/current/', img: L.current, desc: `현재 구성원 ${members.members.length}명` },
+  { title: 'Alumni', href: '/members/alumni/', img: L.alumni, desc: `졸업생 ${alumni.length}명` },
+];
+---
+<BaseLayout title="Members" description="나노탄소재료 연구실 구성원 — 교수, 현재 구성원, 졸업생">
+  <PageHeader title="Members" subtitle="교수, 현재 구성원, 졸업생" crumbs={[{ label: 'Members' }]} />
+  <SubNav section="/members/" />
+  <section class="section">
+    <div class="container landing-cards">
+      {cards.map((c) => (
+        <article class="landing-card">
+          <Img src={c.img.src} alt={c.img.alt} ratio="4 / 3" focus={c.img.focus} kind={c.kind as any} />
+          <h2><a href={url(c.href)}>{c.title}</a></h2>
+          <p>{c.desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

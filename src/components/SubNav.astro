@@ -1,0 +1,20 @@
+---
+/* 같은 섹션의 하위 페이지 탭 (예: Professor / Current / Alumni) */
+import nav from '../data/navigation.json';
+import { url, stripBase } from '../lib/paths';
+interface Props { section: string }
+const { section } = Astro.props;
+const parent = (nav as any[]).find((n) => n.href === section);
+const here = stripBase(Astro.url.pathname);
+---
+{parent?.children && (
+  <nav class="subnav" aria-label={`${parent.label} 하위 메뉴`}>
+    <div class="container">
+      <ul>
+        {parent.children.map((c: any) => (
+          <li><a href={url(c.href)} aria-current={here === c.href ? 'page' : undefined}>{c.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+)}

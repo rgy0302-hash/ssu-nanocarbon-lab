@@ -1,0 +1,23 @@
+---
+import { url } from '../lib/paths';
+interface Crumb { label: string; href?: string }
+interface Props { title: string; subtitle?: string; crumbs?: Crumb[] }
+const { title, subtitle, crumbs = [] } = Astro.props;
+---
+<header class="page-head">
+  <div class="container">
+    {crumbs.length > 0 && (
+      <nav class="crumbs" aria-label="현재 위치">
+        <ol>
+          <li><a href={url('/')}>Home</a></li>
+          {crumbs.map((c) => (
+            <li>{c.href ? <a href={url(c.href)}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</li>
+          ))}
+        </ol>
+      </nav>
+    )}
+    <h1>{title}</h1>
+    {subtitle && <p class="page-head__sub">{subtitle}</p>}
+    <slot />
+  </div>
+</header>

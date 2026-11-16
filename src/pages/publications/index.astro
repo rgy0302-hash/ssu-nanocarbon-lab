@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
+import papers from '../../data/papers.json';
+import patents from '../../data/patents.json';
+import { url } from '../../lib/paths';
+const latest = papers.map((p, i) => ({ ...p, i })).sort((a, b) => b.year - a.year || a.i - b.i).slice(0, 3);
+---
+<BaseLayout title="Publication" description="나노탄소재료 연구실 논문 및 특허 목록">
+  <PageHeader title="Publication" subtitle="논문과 특허" crumbs={[{ label: 'Publication' }]} />
+  <SubNav section="/publications/" />
+  <section class="section">
+    <div class="container landing-cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+      <article class="landing-card" style="padding:28px;border:1px solid var(--line);border-radius:var(--radius)">
+        <span class="eyebrow">Papers</span>
+        <h2><a href={url('/publications/papers/')}>논문 {papers.length}편</a></h2>
+        <p>연도별 목록과 제목·저자·학술지 검색</p>
+        <ul class="news-list" style="margin-top:12px">
+          {latest.map((p) => <li style="font-size:.92rem"><span class="muted small">{p.year} · {p.journal}</span><br />{p.title}</li>)}
+        </ul>
+      </article>
+      <article class="landing-card" style="padding:28px;border:1px solid var(--line);border-radius:var(--radius)">
+        <span class="eyebrow">Patents</span>
+        <h2><a href={url('/publications/patents/')}>특허 {patents.length}건</a></h2>
+        <p>국내 {patents.filter((p) => p.region === 'domestic').length}건 · 해외 {patents.filter((p) => p.region === 'overseas').length}건 (출원번호 기준)</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

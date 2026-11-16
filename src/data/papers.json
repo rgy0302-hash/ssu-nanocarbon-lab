@@ -1,0 +1,979 @@
+[
+  {
+    "no": 1,
+    "year": 2026,
+    "title": "Sustainable Carbon-Coated Spherical Graphite Anodes for Enhanced Lithium-Ion Battery Performance",
+    "authors": "Nilüfer Çakmakçı Lee, Haejoo Kim, Hyemin Kim, Junki Bang, Ji In Choi, Gayoung Kim, Youngjin Jeong",
+    "journal": "Fibers and Polymers",
+    "detail": "1-12",
+    "link": "https://link.springer.com/article/10.1007/s12221-026-01365-0",
+    "originalSection": "2026"
+  },
+  {
+    "no": 2,
+    "year": 2026,
+    "title": "Cost-effective and mass-producible Co-sputtered Pt3Ni alloy electrocatalyst on CNT sheet for high-performance ultra-low Pt PEMFCs",
+    "authors": "J Baek, S Jeong, HM Oh, J Lim, J Youn, J Park, J Na, S Yang, D Kim, …",
+    "journal": "International Journal of Hydrogen Energy",
+    "detail": "204, 153283",
+    "link": "https://www.sciencedirect.com/science/article/pii/S036031992506286X",
+    "originalSection": "2026"
+  },
+  {
+    "no": 3,
+    "year": 2025,
+    "title": "Advanced Design Strategy in Polymer Electrolyte Membrane Fuel Cells: Micro-channeling Architectures in Carbon Nanotube Sheets",
+    "authors": "J Park, G Park, S Yang, J Baek, J Lim, J Youn, D Kim, J Na, HM Oh, Y Cho, …",
+    "journal": "Small",
+    "detail": "21 (51), e07687",
+    "link": "https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202507687",
+    "originalSection": "2025"
+  },
+  {
+    "no": 4,
+    "year": 2025,
+    "title": "Asymmetric Mechano-Electrochemical Energy Harvesting System with Surface Charge–Modified Carbon Nanotube Yarn for Wearable Devices",
+    "authors": "GH Song, DY Lee, H Gwac, JH Moon, JS Hyeon, J Choi, H Kim, Y Jeong, …",
+    "journal": "Small",
+    "detail": "e08487",
+    "link": "https://onlinelibrary.wiley.com/doi/full/10.1002/smll.202508487",
+    "originalSection": "2025"
+  },
+  {
+    "no": 5,
+    "year": 2025,
+    "title": "Enhanced Mechanical and Electrochemical Properties of Carbon Nanotube Fibers via Embedded Sucrose-Derived Porous Carbon for Mechanoelectrochemical Energy Harvesting",
+    "authors": "H Gwac, DY Lee, GH Song, JH Moon, JM Lee, HJ Sim, J Bang, Y Jeong, …",
+    "journal": "Advanced Functional Materials",
+    "detail": "e14096",
+    "link": "https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/adfm.202514096",
+    "originalSection": "2025"
+  },
+  {
+    "no": 6,
+    "year": 2025,
+    "title": "Controlled Pt nano-morphology on carbon nanotube sheet deposited via sputtering for high-performance proton exchange membrane fuel cell",
+    "authors": "J Lim, Y Cho, J Baek, D Kim, J Park, J Youn, J Bang, G Park, H Oh, …",
+    "journal": "Materials Today Energy",
+    "detail": "102133",
+    "link": "https://www.sciencedirect.com/science/article/pii/S2468606925003417",
+    "originalSection": "2025"
+  },
+  {
+    "no": 7,
+    "year": 2025,
+    "title": "Polytetrafluoroethylene-coated carbon nanotube sheet as superhydrophobic microporous layer for polymer electrolyte membrane fuel cells",
+    "authors": "D Kim, G Park, J Baek, J Lim, J Park, J Youn, S Yang …",
+    "journal": "International Journal of Hydrogen Energy",
+    "detail": "186, 151708",
+    "link": "https://www.sciencedirect.com/science/article/pii/S036031992504710X",
+    "originalSection": "2025"
+  },
+  {
+    "no": 8,
+    "year": 2025,
+    "title": "Property Enhancement of Direct-Spun Carbon Nanotube Fibers via Polyethylene Glycol Infiltration",
+    "authors": "JG Choi, JW Park, T Li, JH Ahn, Y Jeong, SJ Kim",
+    "journal": "Fibers and Polymers",
+    "detail": "1-8",
+    "link": "https://link.springer.com/article/10.1007/s12221-025-01080-2",
+    "originalSection": "2025"
+  },
+  {
+    "no": 9,
+    "year": 2025,
+    "title": "Copper superfilling of carbon nanotube assembly with long-tortuous pore via one-step electroplating",
+    "authors": "NÇ Lee, M Shin, H Jung, J Lee, H Lee, H Kim, J Ahn, J Bang, H Song, …",
+    "journal": "Surface and Coatings Technology",
+    "detail": "505, 132078",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0257897225003524",
+    "originalSection": "2025"
+  },
+  {
+    "no": 10,
+    "year": 2025,
+    "title": "Role of carbon nanotube film interlayer for Li-free all-solid-state battery",
+    "authors": "NÇ Lee, G Kim, J Moon, J Ahn, H Lee, H Kim, J Bang, J Sun, JY Kim, …",
+    "journal": "Electrochimica Acta",
+    "detail": "146284",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0013468625006450",
+    "originalSection": "2025"
+  },
+  {
+    "no": 11,
+    "year": 2025,
+    "title": "Carbon cloth gas diffusion layer with carbon nanotube sheet microporous layer for high performance polymer electrolyte membrane fuel cells",
+    "authors": "D Kim, G Park, J Park, S Yang, HM Oh, J Youn, J Na, J Bang, Y Jeong, …",
+    "journal": "Journal of Industrial and Engineering Chemistry",
+    "detail": "",
+    "link": "https://www.sciencedirect.com/science/article/pii/S1226086X25001911",
+    "originalSection": "2025"
+  },
+  {
+    "no": 12,
+    "year": 2025,
+    "title": "Enhanced performance of flexible polymer electrolyte membrane fuel cells with functional interlayer of heat-and acid-treated carbon nanotube sheets",
+    "authors": "J Youn, G Park, J Beak, J Park, HM Oh, S Yang, J Na, D Kim, J Lim, H Kim, …",
+    "journal": "Carbon",
+    "detail": "233, 119880",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0008622324010996",
+    "originalSection": "2025"
+  },
+  {
+    "no": 13,
+    "year": 2025,
+    "title": "Design Strategies for High Performance of Proton Exchange Fuel Cells with Ti-Sputtered Carbon Nanotube Sheet Functional Layer",
+    "authors": "H Oh, J Park, G Park, J Baek, J Youn, S Yang, J Na, D Kim, J Lim, H Lee, …",
+    "journal": "Advanced Functional Materials",
+    "detail": "35 (2), 2412311",
+    "link": "https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/adfm.202412311",
+    "originalSection": "2025"
+  },
+  {
+    "no": 14,
+    "year": 2024,
+    "title": "Multifunctional MXene/carbon nanotube Janus film for electromagnetic shielding and infrared shielding/detection in harsh environments",
+    "authors": "T Hassan, A Iqbal, B Yoo, JY Jo, N Cakmakci, SM Naqvi, H Kim, S Jung, …",
+    "journal": "Nano-Micro Letters",
+    "detail": "16 (1), 216",
+    "link": "https://link.springer.com/article/10.1007/s40820-024-01431-3",
+    "originalSection": "2024"
+  },
+  {
+    "no": 15,
+    "year": 2024,
+    "title": "Lithium-embedded carbon nanotube/graphite composite anode for lithium metal battery",
+    "authors": "N Çakmakçı, H Kang, J Moon, H Jung, B Yoo, H Lee, J Lee, Y Jeong",
+    "journal": "Journal of Energy Storage",
+    "detail": "89, 111618",
+    "link": "https://www.sciencedirect.com/science/article/pii/S2352152X24012039",
+    "originalSection": "2024"
+  },
+  {
+    "no": 16,
+    "year": 2024,
+    "title": "Assessment of carbon nanotube sheet densification level",
+    "authors": "N Çakmakçı, B Yoo, H Lee, Y Jeong",
+    "journal": "Carbon Letters",
+    "detail": "34 (4), 1239-1245",
+    "link": "https://link.springer.com/article/10.1007/s42823-024-00688-3",
+    "originalSection": "2024"
+  },
+  {
+    "no": 17,
+    "year": 2024,
+    "title": "Improved performance of high-temperature proton exchange membrane fuel cells by purified CNT nanoporous sheets",
+    "authors": "O Kwon, S Yang, BH Kang, J Park, G Park, J Baek, HM Oh, Y So, SH Park, …",
+    "journal": "Advanced Functional Materials",
+    "detail": "34 (7), 2309865",
+    "link": "https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/adfm.202309865",
+    "originalSection": "2024"
+  },
+  {
+    "no": 18,
+    "year": 2024,
+    "title": "Interfacially-enhanced quasi-solid electrolyte using ionic liquid for lithium-ion battery",
+    "authors": "M Kim, N Çakmakçı, H Song, Y Jeong",
+    "journal": "Materials Research Bulletin",
+    "detail": "170, 112588",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0025540823004439",
+    "originalSection": "2024"
+  },
+  {
+    "no": 19,
+    "year": 2024,
+    "title": "Multifunctional MXene/Carbon Nanotube Janus Film for Electromagnetic Shielding and Infrared Shielding/Detection in Harsh Environments",
+    "authors": "AI Tufail Hassan, B Yoo, JY Jo, N Cakmakci, SM Naqvi, H Kim, S Jung, …",
+    "journal": "",
+    "detail": "",
+    "link": "https://www.researching.cn/ArticlePdf/m00130/2024/16/1/216.pdf",
+    "check": "원본 목록에서 14번과 같은 논문이 다른 링크로 한 번 더 등록됨(중복 여부 확인 필요)",
+    "originalSection": "2024"
+  },
+  {
+    "no": 20,
+    "year": 2023,
+    "title": "Self-powered multidirectional strain sensor for electronic skin based on coiled carbon nanotube yarns",
+    "authors": "T Li, Y Jang, JH Moon, JG Choi, H Gwac, DY Lee, JS Hyeon, TJ Mun, …",
+    "journal": "IEEE Sensors Journal",
+    "detail": "24 (3), 2577-2587",
+    "link": "https://ieeexplore.ieee.org/abstract/document/10366197",
+    "originalSection": "2023"
+  },
+  {
+    "no": 21,
+    "year": 2023,
+    "title": "MXene/CNTs film for multifunctional EMI shielding",
+    "authors": "T Hassan, A Iqbal, SM Naqvi, Y Jeong, B Yoo",
+    "journal": "한국고분자학회 학술대회 연구논문 초록집",
+    "detail": "48 (2), 143-143",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0378775323009850",
+    "check": "원본 링크가 제목과 다른 논문(Journal of Power Sources)으로 연결되는 것으로 보임 — 확인 필요",
+    "originalSection": "2023"
+  },
+  {
+    "no": 22,
+    "year": 2023,
+    "title": "Ferrite-decorated ultrathin and lightweight carbon nanotube film for electromagnetic interference shielding",
+    "authors": "N Çakmakçı, G Kim, H Song, M Shin, Y Jung, Y Jeong",
+    "journal": "ACS Applied Nano Materials",
+    "detail": "6 (19), 18229-18237",
+    "link": "https://pubs.acs.org/doi/full/10.1021/acsanm.3c03492",
+    "originalSection": "2023"
+  },
+  {
+    "no": 23,
+    "year": 2023,
+    "title": "Carbon nanotube sheet as a current collector for low-temperature solid oxide fuel cells",
+    "authors": "W Yu, H Song, Y Jeong, T Park, SW Cha",
+    "journal": "Ceramics International",
+    "detail": "49 (14), 24077-24083",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0272884223011239",
+    "originalSection": "2023"
+  },
+  {
+    "no": 24,
+    "year": 2023,
+    "title": "High platinum utilization for proton exchange membrane fuel cells via low-temperature substrate sputtering on acid-treated carbon nanotube sheet",
+    "authors": "S Jeong, O Kwon, H Yoo, J Kim, H Choi, Y So, J Park, J Lee, Y Jeong, …",
+    "journal": "Chemical Engineering Journal",
+    "detail": "466, 143135",
+    "link": "https://www.sciencedirect.com/science/article/pii/S1385894723018661",
+    "originalSection": "2023"
+  },
+  {
+    "no": 25,
+    "year": 2023,
+    "title": "One-step copper electroplating of carbon nanotube buckypaper using optimized electrolyte with additive chemicals",
+    "authors": "N Çakmakçı, M Shin, H Jung, J Lee, Y Jeong",
+    "journal": "Carbon Letters",
+    "detail": "33 (4), 1035-1043",
+    "link": "https://link.springer.com/article/10.1007/s42823-023-00507-1",
+    "originalSection": "2023"
+  },
+  {
+    "no": 26,
+    "year": 2022,
+    "title": "Cathodic nanoporous CNT functional interlayer as a performance and durability boosting agent for proton exchange membrane fuel cells to operable at 120° C",
+    "authors": "O Kwon, J Kim, H Yoo, H Choi, H Cha, G Kim, H Kim, S Jeong, D Im, …",
+    "journal": "Carbon",
+    "detail": "199, 51-62",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0008622322006066",
+    "originalSection": "2022"
+  },
+  {
+    "no": 27,
+    "year": 2022,
+    "title": "Water lily seed-inspired silicon/carbon composite anode synthesis for high-performance Li-ion battery",
+    "authors": "J Park, N Çakmakçı, H Kim, H Song, D Cho, Y Jeong",
+    "journal": "Journal of Materials Science",
+    "detail": "57 (40), 19006-19018",
+    "link": "https://link.springer.com/article/10.1007/s10853-022-07781-w",
+    "originalSection": "2022"
+  },
+  {
+    "no": 28,
+    "year": 2022,
+    "title": "Carbon nanotube current collector for anode-free battery",
+    "authors": "D Im, Y Jeong",
+    "journal": "Fibers and Polymers",
+    "detail": "23 (8), 2149-2155",
+    "link": "https://link.springer.com/article/10.1007/s12221-022-4953-y",
+    "originalSection": "2022"
+  },
+  {
+    "no": 29,
+    "year": 2022,
+    "title": "High-performance polymer electrolyte membrane fuel cells with nanoporous carbon nanotube layer in low humidity condition",
+    "authors": "J Kim, O Kwon, H Yoo, H Choi, H Cha, H Kim, S Jeong, M Shin, D Im, …",
+    "journal": "Journal of Power Sources",
+    "detail": "537, 231416",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0378775322004268",
+    "originalSection": "2022"
+  },
+  {
+    "no": 30,
+    "year": 2022,
+    "title": "CNT sheet as a cathodic functional interlayer in polymer electrolyte membrane fuel cells",
+    "authors": "O Kwon, J Kim, H Choi, H Cha, M Shin, Y Jeong, T Park",
+    "journal": "Energy",
+    "detail": "245, 123237",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0360544222001402",
+    "originalSection": "2022"
+  },
+  {
+    "no": 31,
+    "year": 2022,
+    "title": "Large-scale, lightweight, and robust nanocomposites based on ruthenium-decorated carbon nanosheets for deformable electrochemical capacitors",
+    "authors": "JH Jun, YK Lee, J Kim, H Song, Y Jeong, C Kim, JH Lee, IS Choi",
+    "journal": "ACS Applied Materials & Interfaces",
+    "detail": "14 (10), 12193-12203",
+    "link": "https://pubs.acs.org/doi/full/10.1021/acsami.1c23455",
+    "originalSection": "2022"
+  },
+  {
+    "no": 32,
+    "year": 2022,
+    "title": "Free-standing carbon nanotube film for high efficiency monopole antenna",
+    "authors": "H Song, H Jeon, D Im, N Çakmakçı, KY Shin, Y Jeong",
+    "journal": "Carbon",
+    "detail": "187, 22-28",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0008622321010538",
+    "originalSection": "2022"
+  },
+  {
+    "no": 33,
+    "year": 2021,
+    "title": "Investigation on photoluminescence and Judd–Ofelt parameters in Eu ion-doped CaZrO3 in relation to the local structural property",
+    "authors": "S Jang, J Lee, SW Wi, H Lim, YJ Jeong, JS Chung, WK Kang, YS Lee",
+    "journal": "Journal of Luminescence",
+    "detail": "240, 118433",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0022231321005494",
+    "originalSection": "2021"
+  },
+  {
+    "no": 34,
+    "year": 2021,
+    "title": "A flexible supercapacitor prepared with surface modified carbon nanotube film electrode and hydrogel electrolyte",
+    "authors": "H Kim, H Song, N Çakmakçı, H Kang, J Park, M Shin, Y Jeong",
+    "journal": "Fibers and Polymers",
+    "detail": "22 (10), 2673-2679",
+    "link": "https://link.springer.com/article/10.1007/s12221-021-0327-0",
+    "originalSection": "2021"
+  },
+  {
+    "no": 35,
+    "year": 2021,
+    "title": "Carbon nanotube sheet as a microporous layer for proton exchange membrane fuel cells",
+    "authors": "J Kim, H Kim, H Song, D Kim, GH Kim, D Im, Y Jeong, T Park",
+    "journal": "Energy",
+    "detail": "227, 120459",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0360544221007088",
+    "originalSection": "2021"
+  },
+  {
+    "no": 36,
+    "year": 2021,
+    "title": "A practical approach to design sulfur host material for lithium-sulfur batteries based on electrical conductivity and pore structure",
+    "authors": "S Kwon, H Song, N Çakmakçı, Y Jeong",
+    "journal": "Materials Today Communications",
+    "detail": "27, 102309",
+    "link": "https://www.sciencedirect.com/science/article/pii/S2352492821003019",
+    "originalSection": "2021"
+  },
+  {
+    "no": 37,
+    "year": 2021,
+    "title": "Flexible thin carbon nanotube web film for curved heating elements under high temperature conditions",
+    "authors": "JH Ha, H Song, H Kim, D Kim, Y Jeong, SH Park",
+    "journal": "Journal of Nanoscience and Nanotechnology",
+    "detail": "21 (3), 1809-1814",
+    "link": "https://www.ingentaconnect.com/contentone/asp/jnn/2021/00000021/00000003/art00052",
+    "originalSection": "2021"
+  },
+  {
+    "no": 38,
+    "year": 2021,
+    "title": "Effect of the Lithiophilicity of the Li Host of a Carbon Nanotube Film on the Performance of Li Metal Battery",
+    "authors": "R Kim, G Kim, M Shin, H Kim, H Song, Y Jeong",
+    "journal": "Textile Science and Engineering",
+    "detail": "58 (2), 106-112",
+    "link": "https://koreascience.kr/article/JAKO202116056992054.page",
+    "originalSection": "2021"
+  },
+  {
+    "no": 39,
+    "year": 2020,
+    "title": "Carbon Nano-Tube Based Nano-Porous Layer in Membrane-Electrode Assemblies for Polymer Electrolyte Membrane Fuel Cells",
+    "authors": "J Kim, H Kim, H Song, D Im, Y Jeong, T Park",
+    "journal": "Electrochemical Society Meeting Abstracts",
+    "detail": "prime2020, 2113-2113",
+    "link": "https://iopscience.iop.org/article/10.1149/MA2020-02332113mtgabs/meta",
+    "originalSection": "2020"
+  },
+  {
+    "no": 40,
+    "year": 2020,
+    "title": "Fabrication of Yolk-Shell Silicon@Carbon Anode Via Iodination Treatment",
+    "authors": "J Park, H Song, N Cakmakci, D Bang, Y Jeong",
+    "journal": "Electrochemical Society Meeting Abstracts",
+    "detail": "prime2020, 400-400",
+    "link": "https://iopscience.iop.org/article/10.1149/MA2020-022400mtgabs/meta",
+    "originalSection": "2020"
+  },
+  {
+    "no": 41,
+    "year": 2020,
+    "title": "Optimization of implant-type wireless rechargeable battery",
+    "authors": "H Kang, N Cakmakci, Y Jeong",
+    "journal": "2020 IEEE Wireless Power Transfer Conference (WPTC)",
+    "detail": "447-449",
+    "link": "https://ieeexplore.ieee.org/abstract/document/9295615",
+    "originalSection": "2020"
+  },
+  {
+    "no": 42,
+    "year": 2020,
+    "title": "Fault current limiting and breaking characteristics of SFCLB using flux coupling with tap changer",
+    "authors": "SH Lim, JO Kim, Y Jeong",
+    "journal": "Energies",
+    "detail": "13 (19), 5138",
+    "link": "https://www.mdpi.com/1996-1073/13/19/5138",
+    "originalSection": "2020"
+  },
+  {
+    "no": 43,
+    "year": 2020,
+    "title": "A-site and B-site substitutions and the emission properties of Eu3+ ions in ABO3–type cubic perovskite: a case study of BaZrO3",
+    "authors": "S Jang, H Lim, SW Wi, JH Park, YJ Jeong, JS Chung, WK Kang, YJ Kwark, …",
+    "journal": "Current Applied Physics",
+    "detail": "20 (10), 1110-1117",
+    "link": "https://www.sciencedirect.com/science/article/pii/S1567173920301590",
+    "originalSection": "2020"
+  },
+  {
+    "no": 44,
+    "year": 2020,
+    "title": "Synthesis of sulfur-co-polymer/porous long carbon nanotubes composite cathode by chemical and physical binding for high performance lithium-sulfur batteries",
+    "authors": "VK Tiwari, H Song, Y Oh, Y Jeong",
+    "journal": "Energy",
+    "detail": "195, 117034",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0360544220301419",
+    "originalSection": "2020"
+  },
+  {
+    "no": 45,
+    "year": 2020,
+    "title": "Effect of Carbon Nanotube/Copper Composite on Efficiency of Electromagnetic Interference Shielding",
+    "authors": "S Lee, M Shin, H Song, Y Jeong",
+    "journal": "Textile Science and Engineering",
+    "detail": "57 (4), 239-246",
+    "link": "https://scholar.google.co.kr/scholar?hl=ko&as_sdt=0,5&cluster=12126064015844522944",
+    "originalSection": "2020"
+  },
+  {
+    "no": 46,
+    "year": 2020,
+    "title": "Effect of Surface Properties of Carbon Nanotube Film on the Performance of Lithium-air Batteries",
+    "authors": "AY Lee, HS Kang, H Song, Y Jeong",
+    "journal": "Textile Science and Engineering",
+    "detail": "57 (2), 113-124",
+    "link": "https://koreascience.kr/article/JAKO202014655595330.page",
+    "originalSection": "2020"
+  },
+  {
+    "no": 47,
+    "year": 2019,
+    "title": "Effects of the aspect ratio of the conductive agent on the kinetic properties of lithium ion batteries",
+    "authors": "H Song, Y Oh, N Cakmakci, Y Jeong",
+    "journal": "RSC Advances",
+    "detail": "9: 40883",
+    "link": "https://www.sciencedirect.com/science/article/pii/S000862231930212X",
+    "check": "원본 링크가 49번 논문(Carbon 147)과 동일 — 올바른 링크 확인 필요",
+    "originalSection": "2019"
+  },
+  {
+    "no": 48,
+    "year": 2019,
+    "title": "Polyacrylonitrile Reinforced Carbon Nanotube Composite Sheet",
+    "authors": "J Park, H Song, J Youk, Y Jeong",
+    "journal": "Textile Science of the Engineering",
+    "detail": "56: 1-6",
+    "link": "https://www.sciencedirect.com/science/article/pii/S000862231930212X",
+    "check": "원본 링크가 49번 논문(Carbon 147)과 동일 — 올바른 링크 확인 필요",
+    "originalSection": "2019"
+  },
+  {
+    "no": 49,
+    "year": 2019,
+    "title": "Fabrication of a coaxial high performance fiber lithium-ion battery supported by a cotton yarn electrolyte reservoir",
+    "authors": "H Song, SY Jeon, Y Jeong",
+    "journal": "Carbon",
+    "detail": "147: 441-450",
+    "link": "https://www.sciencedirect.com/science/article/pii/S000862231930212X",
+    "originalSection": "2019"
+  },
+  {
+    "no": 50,
+    "year": 2019,
+    "title": "Highly Integrated and Flexible Thermoelectric Module Fabricated by Brush-Cast Doping of a Highly Aligned Carbon Nanotube Web",
+    "authors": "CJ An, YH Kang, H Song, Y Jeong, SY Cho",
+    "journal": "ACS Applied Energy Materials",
+    "detail": "2: 1093-1101",
+    "link": "https://pubs.acs.org/doi/abs/10.1021/acsaem.8b01673",
+    "originalSection": "2019"
+  },
+  {
+    "no": 51,
+    "year": 2019,
+    "title": "Highly conductive and stretchable fiber interconnections using dry-spun carbon nanotube fibers modified with ionic liquid/poly(vinylidene fluoride) copolymer composite",
+    "authors": "J Eom, YR Lee, JH Lee, SK Park, Y Jeong, JS Park, YH Kim",
+    "journal": "Composites Science and Technology",
+    "detail": "169: 1-6",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0266353818320116",
+    "originalSection": "2019"
+  },
+  {
+    "no": 52,
+    "year": 2018,
+    "title": "A novel free-standing anode of CuO nanorods in carbon nanotube webs for flexible lithium ion batteries",
+    "authors": "S Lee, H Song, JY Hwang, SM Kim, Y Jeong",
+    "journal": "Carbon Letters",
+    "detail": "27: 98-107",
+    "link": "http://www.carbonlett.org/Upload/files/CARBONLETT/%5B098-107%5D-17-0100.pdf",
+    "originalSection": "2018"
+  },
+  {
+    "no": 53,
+    "year": 2018,
+    "title": "The effect of pore structure and surface properties of carbon nanotube films on the performance of a lithium sulfur battery",
+    "authors": "H Song, Y Hwang, VT Kumar, Y Jeong",
+    "journal": "Carbon Letters",
+    "detail": "27: 12-17",
+    "link": "http://www.carbonlett.org/Upload/files/CARBONLETT/%5B012-017%5D-17-0131.pdf",
+    "originalSection": "2018"
+  },
+  {
+    "no": 54,
+    "year": 2018,
+    "title": "Mechanical and electrical properties of carbon nanotube fibers from impregnation with poly(vinyl alcohol)/poly(acrylic acid) and subsequent thermal condensation",
+    "authors": "HJ Kim, JK Lee, NH You, SM Kim, JY Hwang, M Goh, Y Jeong, BC Ku",
+    "journal": "Polymer Composites",
+    "detail": "39: 971-977",
+    "link": "https://onlinelibrary.wiley.com/doi/abs/10.1002/pc.24027",
+    "originalSection": "2018"
+  },
+  {
+    "no": 55,
+    "year": 2018,
+    "title": "Ultra-Lightweight and Flexible Current Collector Based on Freestanding Carbon Nanotube Sheets for Lithium-Ion Capacitors",
+    "authors": "JH Jun, H Song, Y Jeong",
+    "journal": "Advanced Materials Technologies",
+    "detail": "4: 1800452",
+    "link": "https://onlinelibrary.wiley.com/doi/full/10.1002/admt.201800452",
+    "originalSection": "2018"
+  },
+  {
+    "no": 56,
+    "year": 2018,
+    "title": "Improved Mechanical and Electrical Properties of Carbon Nanotube Yarns by Wet Impregnation and Multi-ply Twisting",
+    "authors": "YR Lee, J Park, Y Jeong, JS Park",
+    "journal": "Fibers and Polymers",
+    "detail": "19: 2478-2482",
+    "link": "https://link.springer.com/article/10.1007/s12221-018-8140-0",
+    "originalSection": "2018"
+  },
+  {
+    "no": 57,
+    "year": 2018,
+    "title": "Electrochemical performance of a coaxial fiber-shaped asymmetric supercapacitor based on nanostructured MnO2/CNT-web paper and Fe2O3/carbon fiber electrodes",
+    "authors": "B Patil, S Ahn, S Yu, H Song, Y Jeong, JH Kim, H Ahn",
+    "journal": "Carbon",
+    "detail": "In press",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0008622318303312",
+    "originalSection": "2018"
+  },
+  {
+    "no": 58,
+    "year": 2018,
+    "title": "Carbon-Nanosheet Based Large-Area Electrochemical Capacitor that is Flexible, Foldable, Twistable, and Stretchable",
+    "authors": "JH Jun, H Song, C Kim, IS Choi, Y Jeong, JH Lee",
+    "journal": "Small",
+    "detail": "14",
+    "link": "https://onlinelibrary.wiley.com/doi/10.1002/smll.201702145",
+    "note": "Featured as a frontispiece image",
+    "originalSection": "2018"
+  },
+  {
+    "no": 59,
+    "year": 2018,
+    "title": "Mechanical properties enhanced by solid-state coupling reaction for molecular covalent bridges of carbon nanotube fibers",
+    "authors": "HJ Kim, H Choo, OK Park, NH You, Y Jeong, HC Kim, JK Lee, BC Ku",
+    "journal": "Materials Letters",
+    "detail": "211: 243-246",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0167577X17314660",
+    "originalSection": "2018"
+  },
+  {
+    "no": 60,
+    "year": 2018,
+    "title": "Simple and novel strategy to fabricate ultra-thin, lightweight, stackable solid-state supercapacitors based on MnO2-incorporated CNT-web paper",
+    "authors": "B Patil, S Ahn, C Park, H Song, Y Jeong, H Ahn",
+    "journal": "Energy",
+    "detail": "142: 608-616",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0360544217317103",
+    "originalSection": "2018"
+  },
+  {
+    "no": 61,
+    "year": 2017,
+    "title": "Directly-prelithiated carbon nanotube film for high-performance flexible lithium-ion battery electrodes",
+    "authors": "S Lee, H Song, JY Hwang, Y Jeong",
+    "journal": "Fiber and Polymers",
+    "detail": "18: 2334-2341",
+    "link": "https://link.springer.com/article/10.1007/s12221-017-7715-5",
+    "originalSection": "2017"
+  },
+  {
+    "no": 62,
+    "year": 2017,
+    "title": "High-modulus and strength carbon nanotube fibers using molecular cross-linking",
+    "authors": "OK Park, H Choi, H Jeong, Y Jung, J Yu, JK Lee, JY Hwang, SM Kim, Y Jeong, CR Park, M Endo, BC Ku",
+    "journal": "Carbon",
+    "detail": "118: 413-421",
+    "link": "http://www.sciencedirect.com/science/article/pii/S0008622317303354",
+    "originalSection": "2017"
+  },
+  {
+    "no": 63,
+    "year": 2017,
+    "title": "Enhanced Mechanical and Electrical Properties of Nitrogen Doped Carbon Nanotube Fibers Using Pyrolyzed Amino Acid",
+    "authors": "OK Park, Y Jeong, JK Lee, BC Ku",
+    "journal": "Science of Advanced Materials",
+    "detail": "9.2: 227-231",
+    "link": "http://www.ingentaconnect.com/contentone/asp/sam/2017/00000009/00000002/art00013",
+    "originalSection": "2017"
+  },
+  {
+    "no": 64,
+    "year": 2017,
+    "title": "High-performance flexible thermoelectric generator by control of electronic structure of directly spun carbon nanotube webs with various molecular dopants",
+    "authors": "CJ An, YH Kang, H Song, Y Jeong, SY Cho",
+    "journal": "Journal of Materials Chemistry A",
+    "detail": "5.30: 15631-15639",
+    "link": "http://pubs.rsc.org/-/content/articlelanding/2017/ta/c7ta02509b/unauth#!divAbstract",
+    "originalSection": "2017"
+  },
+  {
+    "no": 65,
+    "year": 2017,
+    "title": "Flexible catholyte@carbon nanotube film electrode for high-performance lithium sulfur battery",
+    "authors": "S Kim, H Song, Y Jeong",
+    "journal": "Carbon",
+    "detail": "113: 371-378",
+    "link": "http://www.sciencedirect.com/science/article/pii/S0008622316309939",
+    "originalSection": "2017"
+  },
+  {
+    "no": 66,
+    "year": 2016,
+    "title": "Mechanical and electrical properties of thermochemically cross-linked polymer carbon nanotube fibers",
+    "authors": "OK Park, W Lee, JY Hwang, NH You, Y Jeong, SM Kim, BC Ku",
+    "journal": "Composites Part A",
+    "detail": "91.1: 222-228",
+    "link": "http://www.sciencedirect.com/science/article/pii/S1359835X16303438",
+    "originalSection": "2016"
+  },
+  {
+    "no": 67,
+    "year": 2016,
+    "title": "Foldable Thermoelectric Materials: Improvement of the Thermoelectric Performance of Directly Spun CNT Webs by Individual Control of Electrical and Thermal Conductivity",
+    "authors": "CJ An, YH Kang, AY Lee, KS Jang, Y Jeong, SY Cho",
+    "journal": "ACS Applied Materials & Interfaces",
+    "detail": "8.34: 22142-22150",
+    "link": "http://pubs.acs.org/doi/abs/10.1021/acsami.6b04485",
+    "originalSection": "2016"
+  },
+  {
+    "no": 68,
+    "year": 2016,
+    "title": "Mechanical and electrical properties of carbon nanotube fibers from impregnation with poly(vinyl alcohol)/poly(acrylic acid) and subsequent thermal condensation",
+    "authors": "HJ Kim, JK Lee, NH You, SM Kim, JY Hwang, M Goh, Y Jeong, BC Ku",
+    "journal": "Polymer Composites",
+    "detail": "",
+    "link": "http://onlinelibrary.wiley.com/doi/10.1002/pc.24027/full",
+    "check": "원본 목록에서 54번과 같은 제목으로 한 번 더 등록됨(중복 여부 확인 필요)",
+    "originalSection": "2016"
+  },
+  {
+    "no": 69,
+    "year": 2016,
+    "title": "Impact of electrical heating on effective thermal insulation of a multi-layered winter clothing system for optimal heating efficiency",
+    "authors": "H Park, SK Hwang, JY Lee, J Fan, Y Jeong",
+    "journal": "International Journal of Clothing Science and Technology",
+    "detail": "28.2: 254-264",
+    "link": "http://www.emeraldinsight.com/doi/full/10.1108/IJCST-05-2015-0066",
+    "originalSection": "2016"
+  },
+  {
+    "no": 70,
+    "year": 2015,
+    "title": "Highly Sensitive and Multimodal All-Carbon Skin Sensors Capable of Simultaneously Detecting Tactile and Biological Stimuli",
+    "authors": "SY Kim, S Park, HW Park, DH Park, Y Jeong, DH Kim",
+    "journal": "Advanced Materials",
+    "detail": "27.28: 4178-4185",
+    "link": "http://onlinelibrary.wiley.com/doi/10.1002/adma.201501408/full",
+    "note": "Featured as a front cover image",
+    "originalSection": "2015"
+  },
+  {
+    "no": 71,
+    "year": 2015,
+    "title": "Effects of nitrogen doping from pyrolyzed ionic liquid in carbon nanotube fibers: enhanced mechanical and electrical properties",
+    "authors": "OK Park, HJ Kim, JY Hwang, SM Kim, Y Jeong, JK Lee, BC Ku",
+    "journal": "Nanotechnology",
+    "detail": "26.7: 075706",
+    "link": "http://iopscience.iop.org/article/10.1088/0957-4484/26/7/075706/meta",
+    "originalSection": "2015"
+  },
+  {
+    "no": 72,
+    "year": 2015,
+    "title": "Carbon nanotube film anodes for flexible lithium ion batteries",
+    "authors": "S Yoon, S Lee, S Kim, KW Park, D Cho, Y Jeong",
+    "journal": "Journal of Power Sources",
+    "detail": "279: 495-501",
+    "link": "http://www.sciencedirect.com/science/article/pii/S0378775315000142",
+    "originalSection": "2015"
+  },
+  {
+    "no": 73,
+    "year": 2015,
+    "title": "Facile Synthesis of Porous Silicon Nanofibers by Magnesium Reduction for Application in Lithium Ion Batteries",
+    "authors": "D Cho, M Kim, J Hwang, JH Park, YL Joo, Y Jeong",
+    "journal": "Nanoscale Research Letters",
+    "detail": "10.1: 1-8",
+    "link": "http://link.springer.com/article/10.1186/s11671-015-1132-8",
+    "originalSection": "2015"
+  },
+  {
+    "no": 74,
+    "year": 2015,
+    "title": "Effect of oxygen plasma treatment on the mechanical properties of carbon nanotube fibers",
+    "authors": "OK Park, WY Kim, SM Kim, NH You, Y Jeong, HS Lee, BC Ku",
+    "journal": "Materials Letters",
+    "detail": "156: 17-20",
+    "link": "http://www.sciencedirect.com/science/article/pii/S0167577X15006862",
+    "originalSection": "2015"
+  },
+  {
+    "no": 75,
+    "year": 2015,
+    "title": "Effects of post-treated carbon nanotube films on electrochemical performance for bendable lithium-ion batteries",
+    "authors": "S Lee, D Cho, Y Jeong",
+    "journal": "Fibers and Polymers",
+    "detail": "16.7: 1600-1604",
+    "link": "http://link.springer.com/article/10.1007/s12221-015-5289-7",
+    "originalSection": "2015"
+  },
+  {
+    "no": 76,
+    "year": 2015,
+    "title": "Synthesis of titanium carbide–carbon nanofibers via carbothermal reduction of titania with carbon",
+    "authors": "D Cho, JH Park, Y Jeong, YL Joo",
+    "journal": "Ceramics International",
+    "detail": "41.9: 10974-10979",
+    "link": "http://www.sciencedirect.com/science/article/pii/S0272884215009700",
+    "originalSection": "2015"
+  },
+  {
+    "no": 77,
+    "year": 2015,
+    "title": "Facile fabrication of porous silicon nanowires using water-based polyvinylalcohol/silicon tetraacetate solution",
+    "authors": "D Cho, Y Jeong",
+    "journal": "Materials Letters",
+    "detail": "160: 503-506",
+    "link": "http://www.sciencedirect.com/science/article/pii/S0167577X15303700",
+    "originalSection": "2015"
+  },
+  {
+    "no": 78,
+    "year": 2015,
+    "title": "Enhancement of electrical conductivity of carbon nanotube fibers by copper sulfide plating",
+    "authors": "S Kim, S Kim, YH Kim, BC Ku, Y Jeong",
+    "journal": "Fibers and Polymers",
+    "detail": "16.4: 769-773",
+    "link": "http://link.springer.com/article/10.1007/s12221-015-0769-3#page-1",
+    "originalSection": "2015"
+  },
+  {
+    "no": 79,
+    "year": 2015,
+    "title": "Surface hydro-properties of electrospun fiber mats",
+    "authors": "D Cho, S Chen, Y Jeong, YL Joo",
+    "journal": "Fibers and Polymers",
+    "detail": "16.7: 1578-1586",
+    "link": "http://link.springer.com/article/10.1007/s12221-015-5258-1",
+    "originalSection": "2015"
+  },
+  {
+    "no": 80,
+    "year": 2015,
+    "title": "Carbon nanotube web-based current collectors for high-performance lithium ion batteries",
+    "authors": "SJ Kim, AY Lee, HC Park, SY Kim, MC Kim, JM Lee, SB Kim, WS Kim, Y Jeong, KW Park",
+    "journal": "Materials Today Communications",
+    "detail": "4: 149-155",
+    "link": "http://www.sciencedirect.com/science/article/pii/S2352492815300106",
+    "originalSection": "2015"
+  },
+  {
+    "no": 81,
+    "year": 2014,
+    "title": "Enhanced spinnability of carbon nanotube fibers by surfactant addition",
+    "authors": "J Song, S Kim, S Yoon, D Cho, Y Jeong",
+    "journal": "Fibers and Polymers",
+    "detail": "15.4: 762-766",
+    "link": "http://link.springer.com/article/10.1007/s12221-014-0762-2",
+    "originalSection": "2013-2014"
+  },
+  {
+    "no": 82,
+    "year": 2013,
+    "title": "Chemical Method for Improving Both the Electrical Conductivity and Mechanical Properties of Carbon Nanotube Yarn via Intramolecular Cross-Dehydrogenative Coupling",
+    "authors": "YM Choi, H Choo, H Yeo, NH You, DS Lee, BC Ku, HC Kim, PH Bong, Y Jeong, M Goh",
+    "journal": "ACS Applied Materials & Interfaces",
+    "detail": "5.16: 7726-7730",
+    "link": "http://pubs.acs.org/doi/abs/10.1021/am4026104",
+    "originalSection": "2013-2014"
+  },
+  {
+    "no": 83,
+    "year": 2013,
+    "title": "Controlling the crystalline quality of carbon nanotubes with processing parameters from chemical vapor deposition synthesis",
+    "authors": "Y Jung, J Song, W Huh, D Cho, Y Jeong",
+    "journal": "Chemical Engineering Journal",
+    "detail": "228: 1050-1056",
+    "link": "http://www.sciencedirect.com/science/article/pii/S1385894713007080",
+    "originalSection": "2013-2014"
+  },
+  {
+    "no": 84,
+    "year": 2013,
+    "title": "Piezoelectric and field emitted properties of controlled ZnO nanorods on CNT yarns",
+    "authors": "M Seo, Y Jung, D Lim, D Cho, Y Jeong",
+    "journal": "Materials Letters",
+    "detail": "92: 177-180",
+    "link": "http://www.sciencedirect.com/science/article/pii/S0167577X1201508X",
+    "originalSection": "2013-2014"
+  },
+  {
+    "no": 85,
+    "year": 2013,
+    "title": "A resistive-type sensor based on flexible multi-walled carbon nanotubes and polyacrylic acid composite films",
+    "authors": "J Lee, D Cho, Y Jeong",
+    "journal": "Solid-State Electronics",
+    "detail": "87: 80-84",
+    "link": "http://www.sciencedirect.com/science/article/pii/S0038110113002128",
+    "originalSection": "2013-2014"
+  },
+  {
+    "no": 86,
+    "year": 2012,
+    "title": "Carbon Nanotube/Poly(vinylalcohol) Fibers with a Sheath-core Structure, Prepared by Wet Spinning",
+    "authors": "G Park, Y Jung, GW Lee, JP Hinestroza, Y Jeong",
+    "journal": "Fibers and Polymers",
+    "detail": "13.7: 874-879",
+    "link": "http://link.springer.com/article/10.1007/s12221-012-0874-5#page-1",
+    "originalSection": "2010-2012"
+  },
+  {
+    "no": 87,
+    "year": 2012,
+    "title": "High-performance field emission from a carbon nanotube carpet",
+    "authors": "J Lee, Y Jung, J Song, JS Kom, GW Lee, HJ Jeong, Y Jeong",
+    "journal": "Carbon",
+    "detail": "50.10: 3889-3896",
+    "link": "http://www.sciencedirect.com/science/article/pii/S0008622312003478",
+    "originalSection": "2010-2012"
+  },
+  {
+    "no": 88,
+    "year": 2012,
+    "title": "Fabrication and Applications of Carbon Nanotube Fibers",
+    "authors": "H Choo, Y Jeong, Y Jeong, HC Kim, BC Ku",
+    "journal": "Carbon Letters",
+    "detail": "13.4: 191-204",
+    "link": "http://www.koreascience.or.kr/article/ArticleFullRecord.jsp?cn=HGTSB6_2012_v13n4_191",
+    "originalSection": "2010-2012"
+  },
+  {
+    "no": 89,
+    "year": 2010,
+    "title": "Polypropylene/carbon nanotube composites prepared with a environmentally benign processes",
+    "authors": "J Kim, Y Jung, YJ Kwark, Y Jeong",
+    "journal": "Journal of Applied Polymer Science",
+    "detail": "118.3: 1335-1340",
+    "link": "http://onlinelibrary.wiley.com/doi/10.1002/app.32327/full",
+    "originalSection": "2010-2012"
+  },
+  {
+    "no": 90,
+    "year": 2010,
+    "title": "Superamphiphilic Janus Fabric",
+    "authors": "HS Lim, SH Park, SH Koo, YJ Kwark, EL Thomas, Y Jeong, JH Cho",
+    "journal": "Langmuir",
+    "detail": "26.24: 19159-19162",
+    "link": "http://pubs.acs.org/doi/abs/10.1021/la103829c",
+    "originalSection": "2010-2012"
+  },
+  {
+    "no": 91,
+    "year": 2010,
+    "title": "Optimizing functionalization of multiwalled carbon nanotubes using sodium lignosulfonate",
+    "authors": "Y Jeong, J Kim, GW Lee",
+    "journal": "Colloid Polymer Science",
+    "detail": "288.1: 1-6",
+    "link": "http://link.springer.com/article/10.1007/s00396-009-2127-8#page-1",
+    "originalSection": "2010-2012"
+  },
+  {
+    "no": 92,
+    "year": 2010,
+    "title": "Robust Superhydrophobic Mats based on Electrospun Crystalline Nanofibers Combined with a Silane Precursor",
+    "authors": "SH Park, SM Lee, HS Lim, JT Han, DR Lee, HS Shin, Y Jeong, J Kim, JH Cho",
+    "journal": "ACS Applied Materials & Interfaces",
+    "detail": "2.3: 658-662",
+    "link": "http://pubs.acs.org/doi/abs/10.1021/am100005x",
+    "originalSection": "2010-2012"
+  },
+  {
+    "no": 93,
+    "year": 2009,
+    "title": "Thermal and mechanical properties of polypropylene filaments reinforced with multiwalled carbon nanotubes via melt compounding",
+    "authors": "S Choi, Y Jeong, GW Lee, DH Cho",
+    "journal": "Fibers and Polymers",
+    "detail": "10.4: 513-518",
+    "link": "http://link.springer.com/article/10.1007/s12221-009-0513-y",
+    "originalSection": "2006-2009"
+  },
+  {
+    "no": 94,
+    "year": 2008,
+    "title": "The removal of heavy metals in aqueous solution by hydroxyapatite/cellulose composite",
+    "authors": "S Choi, Y Jeong",
+    "journal": "Fibers and Polymers",
+    "detail": "9.3: 267-270",
+    "link": "http://link.springer.com/article/10.1007/s12221-008-0042-0#page-1",
+    "originalSection": "2006-2009"
+  },
+  {
+    "no": 95,
+    "year": 2008,
+    "title": "Novel Technique to Align Fabric in Image Analysis",
+    "authors": "Y Jeong",
+    "journal": "Textile Research Journal",
+    "detail": "78.4: 304-310",
+    "link": "https://trj.sagepub.com/content/78/4/304.short",
+    "originalSection": "2006-2009"
+  },
+  {
+    "no": 96,
+    "year": 2006,
+    "title": "Study on the strength retention of technical cord yarn",
+    "authors": "D Cho, Y Jeong",
+    "journal": "Fibers and Polymers",
+    "detail": "7.3: 305-309",
+    "link": "http://link.springer.com/article/10.1007/BF02875688#page-1",
+    "originalSection": "2006-2009"
+  },
+  {
+    "no": 97,
+    "year": 2006,
+    "title": "Analysis of spinning process parameters on development of spun-dyed PET yarn using the Taguchi method",
+    "authors": "D Cho, Y Jeong",
+    "journal": "Journal of Applied Polymer Science",
+    "detail": "102.2: 1419-1427",
+    "link": "http://onlinelibrary.wiley.com/doi/10.1002/app.24275/full",
+    "originalSection": "2006-2009"
+  }
+]

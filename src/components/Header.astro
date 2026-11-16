@@ -1,0 +1,129 @@
+---
+import nav from '../data/navigation.json';
+import site from '../data/site.json';
+import images from '../data/images.json';
+import { url, stripBase } from '../lib/paths';
+import { resolveImage } from '../lib/images';
+
+const here = stripBase(Astro.url.pathname);
+const isActive = (href: string) => (href === '/' ? here === '/' : here.startsWith(href));
+const logo = resolveImage(images.logo.src);
+---
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="brand" href={url('/')}>
+      {logo ? (
+        <img class="brand__logo" src={url(logo)} alt={`${site.labNameKo} 홈`} />
+      ) : (
+        <>
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40"><path d="M20 3 35 11.5v17L20 37 5 28.5v-17z" /><path d="M20 3v34M5 11.5l30 17M35 11.5 5 28.5" /></svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__en">{site.labNameEn}</span>
+            <span class="brand__ko">{site.labNameKo}</span>
+          </span>
+        </>
+      )}
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__label">메뉴</span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="주 메뉴" data-nav>
+      <ul class="menu">
+        {nav.map((item: any, i: number) => (
+          <li class:list={['menu__item', { 'has-sub': item.children, 'is-active': isActive(item.href) }]}>
+            <a class="menu__link" href={url(item.href)} aria-current={here === item.href ? 'page' : undefined}>{item.label}</a>
+            {item.children && (
+              <>
+                <button class="sub-toggle" type="button" aria-expanded="false" aria-controls={`sub-${i}`} data-sub-toggle>
+                  <span class="sr-only">{item.label} 하위 메뉴 열기</span>
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5" /></svg>
+                </button>
+                <ul class="submenu" id={`sub-${i}`}>
+                  {item.children.map((c: any) => (
+                    <li><a href={url(c.href)} aria-current={here === c.href ? 'page' : undefined}>{c.label}</a></li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+  const navEl = document.querySelector<HTMLElement>('[data-nav]');
+  const desktop = window.matchMedia('(min-width: 1100px)');
+  const canHover = window.matchMedia('(hover: hover)');
+
+  function setMobileOpen(open: boolean, returnFocus = true) {
+    if (!toggle || !header) return;
+    toggle.setAttribute('aria-expanded', String(open));
+    header.classList.toggle('is-open', open);
+    const label = toggle.querySelector('.nav-toggle__label');
+    if (label) label.textContent = open ? '닫기' : '메뉴';
+    document.documentElement.classList.toggle('nav-locked', open);
+    if (open) navEl?.querySelector<HTMLElement>('a, button')?.focus();
+    else if (returnFocus) toggle.focus();
+  }
+
+  function setSub(btn: HTMLButtonElement, open: boolean) {
+    btn.setAttribute('aria-expanded', String(open));
+    btn.closest('.menu__item')?.classList.toggle('is-sub-open', open);
+  }
+  function closeAllSubs(except?: Element | null) {
+    document.querySelectorAll<HTMLButtonElement>('[data-sub-toggle]').forEach((b) => {
+      if (b.closest('.menu__item') !== except) setSub(b, false);
+    });
+  }
+
+  toggle?.addEventListener('click', () => setMobileOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+
+  document.querySelectorAll<HTMLButtonElement>('[data-sub-toggle]').forEach((btn) => {
+    const item = btn.closest('.menu__item');
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      if (desktop.matches) closeAllSubs(item);
+      setSub(btn, open);
+    });
+    // 데스크톱: 마우스를 올리면 열림(보조 기능). 클릭/키보드로도 동일하게 동작.
+    item?.addEventListener('mouseenter', () => { if (desktop.matches && canHover.matches) setSub(btn, true); });
+    item?.addEventListener('mouseleave', () => { if (desktop.matches && canHover.matches) setSub(btn, false); });
+    // 데스크톱: 포커스가 메뉴 밖으로 나가면 닫기
+    item?.addEventListener('focusout', (e) => {
+      if (desktop.matches && !item.contains((e as FocusEvent).relatedTarget as Node)) setSub(btn, false);
+    });
+  });
+
+  // 모바일: 현재 보고 있는 섹션의 하위 메뉴는 펼쳐 둠
+  function syncMode() {
+    if (desktop.matches) {
+      setMobileOpen(false, false);
+      closeAllSubs();
+    } else {
+      document.querySelectorAll<HTMLButtonElement>('.menu__item.is-active [data-sub-toggle]').forEach((b) => setSub(b, true));
+    }
+  }
+  desktop.addEventListener('change', syncMode);
+  syncMode();
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (header?.classList.contains('is-open')) { setMobileOpen(false); return; }
+    const openBtn = document.querySelector<HTMLButtonElement>('[data-sub-toggle][aria-expanded="true"]');
+    if (openBtn && desktop.matches) { setSub(openBtn, false); openBtn.focus(); }
+  });
+  document.addEventListener('click', (e) => {
+    const t = e.target as Node;
+    if (desktop.matches && !navEl?.contains(t)) closeAllSubs();
+    if (!desktop.matches && header?.classList.contains('is-open') && !header.contains(t)) setMobileOpen(false, false);
+  });
+</script>

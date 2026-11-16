@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
+import patents from '../../data/patents.json';
+
+type Pat = { no: number; region: string; country: string; title: string; number: string; year: number | null; status: string | null; link: string | null };
+const list = patents as Pat[];
+const years = [...new Set(list.map((p) => p.year).filter((y): y is number => !!y))].sort((a, b) => b - a);
+const groups = [
+  ...years.map((y) => ({ key: String(y), label: String(y), items: list.filter((p) => p.year === y) })),
+  { key: 'none', label: '연도 미표기', items: list.filter((p) => !p.year) },
+].filter((g) => g.items.length);
+const nDom = list.filter((p) => p.region === 'domestic').length;
+const nOvs = list.length - nDom;
+---
+<BaseLayout title="Patents" description={`나노탄소재료 연구실 특허 ${list.length}건 (국내 ${nDom}, 해외 ${nOvs})`}>
+  <PageHeader title="Patents" subtitle={`총 ${list.length}건 · 국내 ${nDom}건 · 해외 ${nOvs}건`} crumbs={[{ label: 'Publication', href: '/publications/' }, { label: 'Patents' }]} />
+  <SubNav section="/publications/" />
+  <section class="section">
+    <div class="container">
+      <p class="notice-box">연도는 <strong>출원번호에 표기된 연도</strong>를 기준으로 묶었습니다. 미국 출원번호처럼 연도가 표기되지 않은 번호는 ‘연도 미표기’로 분류했습니다. 등록·출원 상태는 원문에 표시된 경우에만 보여 줍니다.</p>
+      <div class="toolbar">
+        <div>
+          <label for="pt-q">특허명·출원번호 검색</label>
+          <input id="pt-q" class="input" type="search" placeholder="예: 연료전지, PCT" data-q autocomplete="off" />
+        </div>
+        <div>
+          <label for="pt-y">연도</label>
+          <select id="pt-y" class="select" data-year>
+            <option value="">전체 연도</option>
+            {groups.map((g) => <option value={g.key}>{g.label} ({g.items.length}건)</option>)}
+          </select>
+        </div>
+        <button type="button" class="btn btn--ghost" data-reset>초기화</button>
+        <div class="seg" role="group" aria-label="국내·해외 구분">
+          <button type="button" data-seg data-value="" aria-pressed="true">전체 {list.length}</button>
+          <button type="button" data-seg data-value="domestic" aria-pressed="false">국내 {nDom}</button>
+          <button type="button" data-seg data-value="overseas" aria-pressed="false">해외 {nOvs}</button>
+        </div>
+      </div>
+      <p class="result-count" aria-live="polite" data-count>총 {list.length}건</p>
+      {groups.map((g) => (
+        <section class="year-group" data-group={g.key} aria-labelledby={`pg-${g.key}`}>
+          <h2 id={`pg-${g.key}`}>{g.label} <small data-group-count>{g.items.length}건</small></h2>
+          <div class="patent__head" aria-hidden="true"><span>특허명</span><span>국가</span><span>출원번호</span></div>
+          <ul class="pub-list">
+            {g.items.map((p) => (
+              <li class="patent" data-item data-seg-value={p.region} data-text={`${p.title} ${p.country} ${p.number}`.toLowerCase()}>
+                <span class="patent__title">
+                  {p.link ? <a href={p.link} target="_blank" rel="noopener">{p.title}<span class="sr-only"> (새 창)</span></a> : p.title}
+                  {p.status && <span class="member__course" style="margin-left:6px">{p.status}</span>}
+                </span>
+                <span class="patent__country"><span class="sr-only">국가: </span>{p.country}</span>
+                <span class="patent__num"><span class="sr-only">출원번호: </span>{p.number}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+      <div class="empty" hidden data-empty><p>검색 결과가 없습니다.</p></div>
+    </div>
+  </section>
+</BaseLayout>
+<script>
+  import { setupFilter } from '../../scripts/filter';
+  setupFilter({ unit: '건' });
+</script>

@@ -1,0 +1,125 @@
+{
+  "groups": [
+    {
+      "id": "phd",
+      "label": "Ph.D. Course",
+      "labelKo": "박사과정"
+    },
+    {
+      "id": "ms",
+      "label": "M.S. Course",
+      "labelKo": "석사과정"
+    },
+    {
+      "id": "undergrad",
+      "label": "Undergraduate",
+      "labelKo": "학부연구생"
+    }
+  ],
+  "members": [
+    {
+      "name": "착막츠이 닐류페르",
+      "nameEn": "N. Cakmakci Lee",
+      "group": "phd",
+      "course": "박사과정",
+      "research": "Li-ion battery, Li-S battery, Anode-free battery",
+      "email": "nlfrckmkci@gmail.com",
+      "photo": {
+        "src": "/images/members/cakmakci-lee.jpg",
+        "alt": "착막츠이 닐류페르 사진",
+        "focus": "50% 30%"
+      }
+    },
+    {
+      "name": "최지인",
+      "nameEn": "J.I Choi",
+      "group": "ms",
+      "course": "석사과정 3",
+      "research": "Li-S solid electrolyte battery",
+      "email": "cji2in@gmail.com",
+      "photo": {
+        "src": "/images/members/choi-ji.jpg",
+        "alt": "최지인 사진",
+        "focus": "50% 30%"
+      }
+    },
+    {
+      "name": "김가영",
+      "nameEn": "G.Y Kim",
+      "group": "ms",
+      "course": "석사과정 2",
+      "research": "Anode-free sulfide solid electrolyte battery",
+      "email": "gayoung2727@gmail.com",
+      "photo": {
+        "src": "/images/members/kim-gy.jpg",
+        "alt": "김가영 사진",
+        "focus": "50% 30%"
+      }
+    },
+    {
+      "name": "정지원",
+      "nameEn": "J.W Jeong",
+      "group": "ms",
+      "course": "석사과정 1",
+      "research": "",
+      "email": "jiwonjeong1149@gmail.com",
+      "photo": {
+        "src": "/images/members/jeong-jw.jpg",
+        "alt": "정지원 사진",
+        "focus": "50% 30%"
+      }
+    },
+    {
+      "name": "정해정",
+      "nameEn": "H.J Jeong",
+      "group": "ms",
+      "course": "석사과정 1",
+      "research": "",
+      "email": "haejj0921@gmail.com",
+      "photo": {
+        "src": "/images/members/jeong-hj.jpg",
+        "alt": "정해정 사진",
+        "focus": "50% 30%"
+      }
+    },
+    {
+      "name": "류상혁",
+      "nameEn": "S.H Ryu",
+      "group": "undergrad",
+      "course": "학사과정 8",
+      "research": "",
+      "email": "sanghyeokr@gmail.com",
+      "photo": {
+        "src": "/images/members/ryu-sh.jpg",
+        "alt": "류상혁 사진",
+        "focus": "50% 30%"
+      }
+    },
+    {
+      "name": "남현진",
+      "nameEn": "H.J Nam",
+      "group": "undergrad",
+      "course": "학사과정 7",
+      "research": "",
+      "email": "namhyeonjin3@gmail.com",
+      "photo": {
+        "src": "/images/members/nam-hj.jpg",
+        "alt": "남현진 사진",
+        "focus": "50% 30%"
+      }
+    },
+    {
+      "name": "김민석",
+      "nameEn": "M.S Kim",
+      "group": "undergrad",
+      "course": "학사과정 7",
+      "research": "",
+      "email": "mskimmaterials@gmail.com",
+      "photo": {
+        "src": "/images/members/kim-ms.jpg",
+        "alt": "김민석 사진",
+        "focus": "50% 30%"
+      }
+    }
+  ]
+}
