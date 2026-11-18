@@ -1,80 +1,43 @@
 [
   {
-    "label": "Home",
-    "href": "/"
-  },
-  {
-    "label": "About us",
-    "href": "/about/"
+    "label": "Research",
+    "href": "/research/",
+    "children": [
+      { "label": "CNT Assembly", "href": "/research/cnt-assembly/" },
+      { "label": "CNT Heating Element", "href": "/research/cnt-heating-element/" },
+      { "label": "Wearable Battery", "href": "/research/wearable-battery/" },
+      { "label": "Bulletproof", "href": "/research/bulletproof/" }
+    ]
   },
   {
     "label": "Members",
     "href": "/members/",
     "children": [
-      {
-        "label": "Professor",
-        "href": "/members/professor/"
-      },
-      {
-        "label": "Current",
-        "href": "/members/current/"
-      },
-      {
-        "label": "Alumni",
-        "href": "/members/alumni/"
-      }
+      { "label": "Professor", "href": "/members/professor/" },
+      { "label": "Current", "href": "/members/current/" },
+      { "label": "Alumni", "href": "/members/alumni/" }
     ]
   },
   {
-    "label": "Research",
-    "href": "/research/",
-    "children": [
-      {
-        "label": "CNT Assembly",
-        "href": "/research/cnt-assembly/"
-      },
-      {
-        "label": "CNT Heating Element",
-        "href": "/research/cnt-heating-element/"
-      },
-      {
-        "label": "Wearable Battery",
-        "href": "/research/wearable-battery/"
-      },
-      {
-        "label": "Bulletproof",
-        "href": "/research/bulletproof/"
-      }
-    ]
-  },
-  {
-    "label": "Publication",
+    "label": "Publications",
     "href": "/publications/",
     "children": [
-      {
-        "label": "Papers",
-        "href": "/publications/papers/"
-      },
-      {
-        "label": "Patents",
-        "href": "/publications/patents/"
-      }
+      { "label": "Papers", "href": "/publications/papers/" },
+      { "label": "Patents", "href": "/publications/patents/" }
     ]
   },
   {
-    "label": "Videos",
-    "href": "/videos/"
-  },
-  {
-    "label": "Gallery",
-    "href": "/gallery/"
-  },
-  {
-    "label": "Notice",
-    "href": "/notice/"
+    "label": "Board",
+    "href": "/board/",
+    "children": [
+      { "label": "Notice", "href": "/notice/" },
+      { "label": "Gallery", "href": "/gallery/" },
+      { "label": "Videos", "href": "/videos/" }
+    ]
   },
   {
     "label": "Contact us",
-    "href": "/contact/"
+    "href": "/contact/",
+    "highlight": true
   }
 ]

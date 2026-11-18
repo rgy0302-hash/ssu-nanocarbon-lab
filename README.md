@@ -9,6 +9,7 @@
 
 > 자세한 안내 문서
 > - [docs/IMAGE_GUIDE.md](docs/IMAGE_GUIDE.md): 사진 교체 안내표 (위치·경로·비율·해상도)
+> - [docs/BOARD_GUIDE.md](docs/BOARD_GUIDE.md): **Board(공지·갤러리·동영상) 올리기** — 수정할 파일, 사진 위치, 복사용 템플릿(`docs/templates/`)
 > - [docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md): 구성원·논문·특허·공지·갤러리·동영상 추가 방법
 > - [docs/MIGRATION_REPORT.md](docs/MIGRATION_REPORT.md): 기존 사이트 이전 상태표, 검증 결과, 추가로 필요한 자료
 
@@ -21,7 +22,7 @@ nanocarbon-lab/
 ├─ src/
 │  ├─ data/                ← ★ 자주 수정하는 데이터 (JSON)
 │  │  ├─ site.json         연구실 이름, 주소, 이메일, 전화, 홈 소개문, 문의 안내
-│  │  ├─ navigation.json   상단 메뉴
+│  │  ├─ navigation.json   상단 메뉴 (Research · Members · Publications · Board · Contact us)
 │  │  ├─ professor.json    교수 프로필
 │  │  ├─ members.json      현재 구성원
 │  │  ├─ alumni.json       졸업생
@@ -42,7 +43,7 @@ nanocarbon-lab/
 │  ├─ images/home/  about/  members/  research/  gallery/  common/
 │  ├─ files/               다운로드용 첨부파일(PDF 등)
 │  └─ favicon.svg          브라우저 탭 아이콘
-├─ docs/                   안내 문서
+├─ docs/                   안내 문서 (templates/ = 공지·갤러리·동영상 복사용 견본)
 ├─ scripts/check-images.mjs  사진 연결 상태 점검 도구
 ├─ .github/workflows/deploy.yml  GitHub Pages 자동 배포 설정
 ├─ astro.config.mjs        사이트 주소 설정 (자동 처리됨)
@@ -152,6 +153,7 @@ npm run check:images   # 사진이 연결된 자리 / 비어 있는 자리 목�
 |---|---|
 | 연구실 이름, 주소, 이메일, 전화, 소개문 | `src/data/site.json` |
 | 상단 메뉴 이름·순서 | `src/data/navigation.json` |
+| 홈 '최근 소식' 개수 | `src/pages/index.astro` 의 `RECENT_LIMIT` (기본 4) |
 | 사이트 주소·하위 경로 | 자동. 직접 지정하려면 `astro.config.mjs` 의 `SITE_URL`, `BASE_PATH` |
 | 공유 미리보기 이미지 | `public/images/common/og-image.jpg` (1200×630) 추가 |
 | 브라우저 탭 아이콘(favicon) | `public/favicon.svg` 교체 (같은 이름의 SVG 파일) |

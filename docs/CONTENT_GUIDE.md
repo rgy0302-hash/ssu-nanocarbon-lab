@@ -1,5 +1,7 @@
 # 콘텐츠 추가·수정 안내
 
+> 공지·갤러리·동영상(Board) 올리기는 [BOARD_GUIDE.md](BOARD_GUIDE.md)에 단계별로 정리되어 있고, 복사용 템플릿은 [`docs/templates/`](templates/) 에 있습니다.
+
 모든 수정은 GitHub 웹에서 파일을 열고 연필(✏️) 아이콘 → 수정 → **Commit changes** 순서로 합니다. 커밋하면 1~3분 뒤 자동으로 사이트에 반영됩니다.
 
 ## JSON 파일 기본 규칙 (꼭 읽어 주세요)
@@ -130,7 +132,7 @@ attachments:
 
 ## 7. 갤러리 — `src/data/gallery.json`
 
-**앨범 추가:** `albums` 목록의 **맨 위**에 추가하면 갤러리와 홈 '연구실 소식' 첫 자리에 표시됩니다.
+**앨범 추가:** `albums` 목록의 **맨 위**에 추가합니다. Board 첫 화면과 홈 '최근 소식'에는 날짜(없으면 앨범 id 앞 연도) 순으로 표시됩니다. 자세한 규칙은 [BOARD_GUIDE.md](BOARD_GUIDE.md) 참고.
 
 ```json
 {
@@ -199,4 +201,10 @@ images:
 
 ## 11. 메뉴 — `src/data/navigation.json`
 
+현재 상단 메뉴: **Research · Members · Publications · Board · Contact us** (Home 메뉴는 없고 로고를 누르면 홈으로 이동합니다.)
+
 `label`(표시 이름)과 `href`(주소)를 바꾸거나 순서를 옮길 수 있습니다. 하위 메뉴는 `children` 에 넣습니다. 주소는 항상 `/` 로 시작하고 `/` 로 끝나게 적습니다(예: `/members/alumni/`).
+
+- `"highlight": true` 가 붙은 메뉴(현재 Contact us)는 테두리 버튼 모양으로 강조됩니다.
+- 하위 메뉴 주소가 상위 주소와 달라도 됩니다(예: Board 아래 `/notice/`). 그 페이지에 있으면 상위 메뉴(Board)가 선택된 상태로 표시됩니다.
+- About us(`/about/`)는 상단 메뉴에서 빠졌지만 페이지는 그대로이며, 홈 소개 영역의 '연구실 소개 (About us)' 버튼으로 연결됩니다. 소개문은 `src/content/pages/about.md` 에서 고칩니다.

@@ -15,7 +15,7 @@ const nDom = list.filter((p) => p.region === 'domestic').length;
 const nOvs = list.length - nDom;
 ---
 <BaseLayout title="Patents" description={`나노탄소재료 연구실 특허 ${list.length}건 (국내 ${nDom}, 해외 ${nOvs})`}>
-  <PageHeader title="Patents" subtitle={`총 ${list.length}건 · 국내 ${nDom}건 · 해외 ${nOvs}건`} crumbs={[{ label: 'Publication', href: '/publications/' }, { label: 'Patents' }]} />
+  <PageHeader title="Patents" subtitle={`총 ${list.length}건 · 국내 ${nDom}건 · 해외 ${nOvs}건`} crumbs={[{ label: 'Publications', href: '/publications/' }, { label: 'Patents' }]} />
   <SubNav section="/publications/" />
   <section class="section">
     <div class="container">

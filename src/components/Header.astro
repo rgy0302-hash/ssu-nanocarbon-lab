@@ -6,14 +6,17 @@ import { url, stripBase } from '../lib/paths';
 import { resolveImage } from '../lib/images';
 
 const here = stripBase(Astro.url.pathname);
-const isActive = (href: string) => (href === '/' ? here === '/' : here.startsWith(href));
+// 상위 메뉴 활성 표시: 자기 주소 또는 하위 메뉴 주소(예: Board → /notice/, /gallery/, /videos/)로 시작하면 활성
+const under = (href: string) => (href === '/' ? here === '/' : here.startsWith(href));
+const isActive = (item: any) => under(item.href) || (item.children || []).some((c: any) => under(c.href));
+const childCurrent = (href: string) => (here === href ? 'page' : here.startsWith(href) ? 'true' : undefined);
 const logo = resolveImage(images.logo.src);
 ---
 <header class="site-header" data-header>
   <div class="container site-header__inner">
-    <a class="brand" href={url('/')}>
+    <a class="brand" href={url('/')} aria-label={logo ? undefined : `${site.labNameKo} 홈으로`}>
       {logo ? (
-        <img class="brand__logo" src={url(logo)} alt={`${site.labNameKo} 홈`} />
+        <img class="brand__logo" src={url(logo)} alt={`${site.labNameKo} 홈으로`} />
       ) : (
         <>
           <span class="brand__mark" aria-hidden="true">
@@ -35,7 +38,7 @@ const logo = resolveImage(images.logo.src);
     <nav id="site-nav" class="site-nav" aria-label="주 메뉴" data-nav>
       <ul class="menu">
         {nav.map((item: any, i: number) => (
-          <li class:list={['menu__item', { 'has-sub': item.children, 'is-active': isActive(item.href) }]}>
+          <li class:list={['menu__item', { 'has-sub': item.children, 'is-active': isActive(item), 'menu__item--highlight': item.highlight }]}>
             <a class="menu__link" href={url(item.href)} aria-current={here === item.href ? 'page' : undefined}>{item.label}</a>
             {item.children && (
               <>
@@ -45,7 +48,7 @@ const logo = resolveImage(images.logo.src);
                 </button>
                 <ul class="submenu" id={`sub-${i}`}>
                   {item.children.map((c: any) => (
-                    <li><a href={url(c.href)} aria-current={here === c.href ? 'page' : undefined}>{c.label}</a></li>
+                    <li><a href={url(c.href)} aria-current={childCurrent(c.href)}>{c.label}</a></li>
                   ))}
                 </ul>
               </>
@@ -61,7 +64,7 @@ const logo = resolveImage(images.logo.src);
   const header = document.querySelector<HTMLElement>('[data-header]');
   const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
   const navEl = document.querySelector<HTMLElement>('[data-nav]');
-  const desktop = window.matchMedia('(min-width: 1100px)');
+  const desktop = window.matchMedia('(min-width: 960px)');
   const canHover = window.matchMedia('(hover: hover)');
 
   function setMobileOpen(open: boolean, returnFocus = true) {

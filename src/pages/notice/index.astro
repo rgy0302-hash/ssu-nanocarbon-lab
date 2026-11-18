@@ -1,12 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
 import { getNotices, formatDate } from '../../lib/content';
 import { url } from '../../lib/paths';
 const notices = getNotices();
 ---
 <BaseLayout title="Notice" description="나노탄소재료 연구실 공지사항">
-  <PageHeader title="Notice" subtitle="공지사항" crumbs={[{ label: 'Notice' }]} />
+  <PageHeader title="Notice" subtitle="공지사항" crumbs={[{ label: 'Board', href: '/board/' }, { label: 'Notice' }]} />
+  <SubNav section="/board/" />
   <section class="section">
     <div class="container narrow">
       {notices.length ? (

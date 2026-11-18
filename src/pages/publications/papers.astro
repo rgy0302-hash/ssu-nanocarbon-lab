@@ -14,7 +14,7 @@ const ordered = groups.flatMap((g) => g.items);
 const numberOf = new Map(ordered.map((p, k) => [p.i, ordered.length - k]));
 ---
 <BaseLayout title="Papers" description={`나노탄소재료 연구실 논문 ${list.length}편 — 연도별 목록, 제목·저자 검색`}>
-  <PageHeader title="Papers" subtitle={`총 ${list.length}편 · ${years[years.length - 1]}–${years[0]}`} crumbs={[{ label: 'Publication', href: '/publications/' }, { label: 'Papers' }]} />
+  <PageHeader title="Papers" subtitle={`총 ${list.length}편 · ${years[years.length - 1]}–${years[0]}`} crumbs={[{ label: 'Publications', href: '/publications/' }, { label: 'Papers' }]} />
   <SubNav section="/publications/" />
   <section class="section">
     <div class="container">

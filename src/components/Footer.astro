@@ -1,20 +1,24 @@
 ---
+/* 바닥글: 연락처(주소·이메일·전화)와 Contact us 링크. 값은 src/data/site.json 에서 가져옵니다. */
 import site from '../data/site.json';
 import nav from '../data/navigation.json';
 import { url } from '../lib/paths';
+const contactHref = '/contact/';
 ---
 <footer class="site-footer">
   <div class="container site-footer__grid">
     <div>
-      <p class="site-footer__name">{site.labNameKo}<span>{site.labNameEn}</span></p>
-      <address>
-        {site.address}<br />
-        <a href={`mailto:${site.email}`}>{site.email}</a> · <a href={`tel:${site.phoneLink}`}>{site.phone}</a>
+      <p class="site-footer__name">{site.labNameKo}<span>{site.labNameEn} · {site.affiliation}</span></p>
+      <address class="site-footer__contact">
+        <span class="site-footer__row"><span class="site-footer__label">주소</span><span>{site.address}{site.office && <><br />{site.office}</>}</span></span>
+        {site.email && <span class="site-footer__row"><span class="site-footer__label">이메일</span><a href={`mailto:${site.email}`}>{site.email}</a></span>}
+        {site.phone && <span class="site-footer__row"><span class="site-footer__label">전화</span><a href={`tel:${site.phoneLink}`}>{site.phone}</a></span>}
       </address>
+      <a class="site-footer__cta" href={url(contactHref)}>Contact us<span class="site-footer__arrow" aria-hidden="true">→</span></a>
     </div>
     <nav aria-label="바닥글 메뉴">
       <ul class="site-footer__links">
-        {nav.filter((n: any) => n.href !== '/').map((n: any) => <li><a href={url(n.href)}>{n.label}</a></li>)}
+        {(nav as any[]).filter((n) => n.href !== '/').map((n) => <li><a href={url(n.href)}>{n.label}</a></li>)}
       </ul>
     </nav>
   </div>

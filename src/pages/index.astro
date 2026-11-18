@@ -1,4 +1,13 @@
 ---
+/*
+ * 홈 화면
+ * 화면에 보이는 글·숫자는 모두 데이터 파일에서 가져옵니다(이 파일에는 내용이 없습니다).
+ *   소개문        src/data/site.json → home
+ *   대표 이미지    src/data/images.json → homeHero
+ *   연구 분야      src/content/research/*.md
+ *   논문·특허 등   src/data/papers.json, patents.json, members.json, alumni.json
+ *   최근 소식      공지·갤러리·동영상(Board)에서 자동으로 최신 4개 → 없으면 영역이 숨겨집니다.
+ */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Img from '../components/Img.astro';
 import site from '../data/site.json';
@@ -7,52 +16,53 @@ import papers from '../data/papers.json';
 import patents from '../data/patents.json';
 import members from '../data/members.json';
 import alumni from '../data/alumni.json';
-import gallery from '../data/gallery.json';
-import { getResearch, getNotices, formatDate } from '../lib/content';
+import { getResearch } from '../lib/content';
+import { getBoardItems } from '../lib/board';
 import { url } from '../lib/paths';
 
+const RECENT_LIMIT = 4; // 홈 '최근 소식' 개수 (3~4 권장)
 const research = getResearch();
-const notices = getNotices().slice(0, 4);
-// 최신 논문: 연도 내림차순 → 원본 목록 순서
+const recent = getBoardItems().slice(0, RECENT_LIMIT);
+// 최신 논문: 연도 내림차순 → 같은 연도는 파일 순서
 const latestPapers = papers.map((p, i) => ({ ...p, i })).sort((a, b) => b.year - a.year || a.i - b.i).slice(0, 5);
-const albums = gallery.albums.slice(0, 4);
 const stats = [
   { n: papers.length, label: '논문', href: '/publications/papers/' },
   { n: patents.length, label: '특허 (국내·해외 출원)', href: '/publications/patents/' },
   { n: members.members.length, label: '현재 학생 구성원', href: '/members/current/' },
   { n: alumni.length, label: '졸업생', href: '/members/alumni/' },
 ];
-const q = encodeURIComponent(site.mapQuery);
 ---
 <BaseLayout>
-  <section class="hero">
+  <section class="hero" aria-labelledby="home-title">
     <div class="container hero__grid">
-      <div>
+      <div class="home-about">
         <span class="eyebrow">{site.affiliation}</span>
-        <h1>{site.labNameEn}</h1>
-        <p class="hero__ko">{site.labNameKo}</p>
+        <div>
+          <h1 id="home-title">{site.labNameEn}</h1>
+          <p class="hero__ko">{site.labNameKo}</p>
+        </div>
         <div class="hero__intro">
           <p class="muted">{site.home.welcome}</p>
           {site.home.intro.map((p) => <p>{p}</p>)}
         </div>
         <div class="hero__actions">
-          <a class="btn" href={url('/research/')}>연구 분야 보기</a>
-          <a class="btn btn--ghost" href={url('/about/')}>연구실 소개</a>
+          <a class="btn" href={url('/about/')}>연구실 소개 (About us)</a>
+          <a class="btn btn--ghost" href={url('/research/')}>연구 분야</a>
         </div>
       </div>
       <Img src={images.homeHero.src} alt={images.homeHero.alt} ratio="4 / 3" focus={images.homeHero.focus} loading="eager" />
     </div>
     <div class="container">
-      <div class="stats" aria-label="웹사이트에 등록된 자료 수">
+      <div class="stats" aria-label="연구 성과와 구성원 (웹사이트 등록 기준)">
         {stats.map((s) => <a href={url(s.href)}><strong>{s.n}</strong>{s.label}</a>)}
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" aria-labelledby="home-research">
     <div class="container">
       <div class="section-head">
-        <div><span class="eyebrow">Research</span><h2>주요 연구 분야</h2></div>
+        <div><span class="eyebrow">Research</span><h2 id="home-research">주요 연구 분야</h2></div>
         <a class="text-link" href={url('/research/')}>전체 연구 분야</a>
       </div>
       <div class="areas">
@@ -71,10 +81,10 @@ const q = encodeURIComponent(site.mapQuery);
   </section>
 
   <section class="section section--soft">
-    <div class="container two-col">
+    <div class:list={['container', { 'two-col': recent.length > 0 }]}>
       <div>
         <div class="section-head">
-          <div><span class="eyebrow">Publication</span><h2>최신 논문</h2></div>
+          <div><span class="eyebrow">Publications</span><h2>최신 논문</h2></div>
           <a class="text-link" href={url('/publications/papers/')}>논문 {papers.length}편 전체 보기</a>
         </div>
         <ol class="pub-list">
@@ -89,62 +99,26 @@ const q = encodeURIComponent(site.mapQuery);
           ))}
         </ol>
       </div>
-      <div>
-        <div class="section-head">
-          <div><span class="eyebrow">Notice</span><h2>공지사항</h2></div>
-          <a class="text-link" href={url('/notice/')}>전체 보기</a>
-        </div>
-        {notices.length ? (
-          <ul class="news-list">
-            {notices.map((n) => (
-              <li><a href={url(`/notice/${n.slug}/`)}><time datetime={n.date}>{formatDate(n.date)}</time>{n.title}</a></li>
+
+      {recent.length > 0 && (
+        <div>
+          <div class="section-head">
+            <div><span class="eyebrow">Board</span><h2>최근 소식</h2></div>
+            <a class="text-link" href={url('/board/')}>Board 전체 보기</a>
+          </div>
+          <ul class="recent-list">
+            {recent.map((it) => (
+              <li>
+                <a href={url(it.href)}>
+                  <span class:list={['tag', `tag--${it.type}`]}>{it.typeLabel}</span>
+                  <span class="recent-list__title">{it.title}</span>
+                  {it.date && <time datetime={it.datetime}>{it.date}</time>}
+                </a>
+              </li>
             ))}
           </ul>
-        ) : (
-          <div class="empty"><p>등록된 공지사항이 없습니다.</p></div>
-        )}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div><span class="eyebrow">Gallery</span><h2>연구실 소식</h2></div>
-        <a class="text-link" href={url('/gallery/')}>갤러리 전체 보기</a>
-      </div>
-      <div class="gallery-preview">
-        {albums.map((a) => (
-          <a href={url(`/gallery/#${a.id}`)}>
-            <Img src={a.photos[0]?.src} alt={a.photos[0]?.alt || a.title} ratio="4 / 3" focus={a.photos[0]?.focus} />
-            <span>{a.title}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--soft section--tight">
-    <div class="container contact-strip">
-      <div>
-        <span class="eyebrow">Contact</span>
-        <h2>연락처 및 위치</h2>
-        <p class="muted">{site.contact.recruit}</p>
-        <a class="btn" href={url('/contact/')}>문의 안내 보기</a>
-      </div>
-      <div>
-        <dl class="info-list">
-          <div><dt>주소</dt><dd>{site.address}</dd></div>
-          <div><dt>연구실</dt><dd>{site.office}</dd></div>
-          <div><dt>이메일</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
-          <div><dt>전화</dt><dd><a href={`tel:${site.phoneLink}`}>{site.phone}</a></dd></div>
-        </dl>
-        <div class="map-links">
-          <a class="btn btn--ghost" href={`https://map.naver.com/p/search/${q}`} target="_blank" rel="noopener">네이버 지도<span class="sr-only"> (새 창)</span></a>
-          <a class="btn btn--ghost" href={`https://map.kakao.com/?q=${q}`} target="_blank" rel="noopener">카카오맵<span class="sr-only"> (새 창)</span></a>
-          <a class="btn btn--ghost" href={`https://www.google.com/maps/search/?api=1&query=${q}`} target="_blank" rel="noopener">Google 지도<span class="sr-only"> (새 창)</span></a>
         </div>
-      </div>
+      )}
     </div>
   </section>
 </BaseLayout>

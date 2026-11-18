@@ -18,7 +18,7 @@ const research = getResearch();
         <span class="eyebrow">About Us.</span>
         <h2>{about.frontmatter.heading}</h2>
         <div class="lead"><about.Content /></div>
-        <a class="text-link" href={url('/members/professor/')}>교수 소개</a>
+        <p style="display:flex;gap:18px;flex-wrap:wrap;margin:0"><a class="text-link" href={url('/research/')}>연구 분야</a><a class="text-link" href={url('/members/professor/')}>교수 소개</a><a class="text-link" href={url('/contact/')}>Contact us</a></p>
       </div>
       <Img src={images.aboutBanner.src} alt={images.aboutBanner.alt} ratio="16 / 10" focus={images.aboutBanner.focus} />
     </div>

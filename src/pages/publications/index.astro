@@ -7,8 +7,8 @@ import patents from '../../data/patents.json';
 import { url } from '../../lib/paths';
 const latest = papers.map((p, i) => ({ ...p, i })).sort((a, b) => b.year - a.year || a.i - b.i).slice(0, 3);
 ---
-<BaseLayout title="Publication" description="나노탄소재료 연구실 논문 및 특허 목록">
-  <PageHeader title="Publication" subtitle="논문과 특허" crumbs={[{ label: 'Publication' }]} />
+<BaseLayout title="Publications" description="나노탄소재료 연구실 논문 및 특허 목록">
+  <PageHeader title="Publications" subtitle="논문과 특허" crumbs={[{ label: 'Publications' }]} />
   <SubNav section="/publications/" />
   <section class="section">
     <div class="container landing-cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">

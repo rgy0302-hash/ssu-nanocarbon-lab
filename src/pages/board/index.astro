@@ -1,0 +1,76 @@
+---
+/*
+ * Board 첫 화면: 공지·갤러리·동영상을 한곳에서 보는 페이지
+ * - 게시물 데이터는 화면 코드에 없습니다. 아래 파일만 고치면 자동 반영됩니다.
+ *     공지   src/content/notices/*.md
+ *     갤러리 src/data/gallery.json
+ *     동영상 src/data/videos.json
+ * - 기존 주소(/notice/, /gallery/, /videos/)는 그대로 유지됩니다.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SubNav from '../../components/SubNav.astro';
+import Img from '../../components/Img.astro';
+import { getBoardItems, getBoardCounts } from '../../lib/board';
+import { url } from '../../lib/paths';
+
+const LIMIT = 8; // 최근 게시물 표시 개수
+const items = getBoardItems().slice(0, LIMIT);
+const c = getBoardCounts();
+const cats = [
+  { label: 'Notice', ko: '공지사항', href: '/notice/', count: c.notice ? `${c.notice}건` : '등록된 공지 없음' },
+  { label: 'Gallery', ko: '행사·활동 사진', href: '/gallery/', count: `앨범 ${c.albums}개 · 사진 ${c.photos}장` },
+  { label: 'Videos', ko: '연구 동영상', href: '/videos/', count: `${c.videos}개` },
+];
+---
+<BaseLayout title="Board" description="나노탄소재료 연구실 게시판 — 공지사항, 갤러리, 동영상">
+  <PageHeader title="Board" subtitle="연구실의 공지사항, 행사 사진, 연구 동영상을 모아 봅니다." crumbs={[{ label: 'Board' }]} />
+  <SubNav section="/board/" />
+  <section class="section">
+    <div class="container">
+      <ul class="board-cats" aria-label="게시판 종류" role="list">
+        {cats.map((k) => (
+          <li class="board-cat">
+            <span class="eyebrow">{k.ko}</span>
+            <h2><a href={url(k.href)}>{k.label}</a></h2>
+            <p class="board-cat__count">{k.count}</p>
+          </li>
+        ))}
+      </ul>
+
+      <div class="section-head">
+        <div><span class="eyebrow">Recent</span><h2>최근 게시물</h2></div>
+      </div>
+      {items.length ? (
+        <ul class="post-grid" role="list">
+          {items.map((it) => (
+            <li class="post">
+              {it.type === 'notice' ? (
+                <span class="post__text-thumb" aria-hidden="true">
+                  <svg viewBox="0 0 48 48"><path d="M12 6h18l8 8v28H12z" /><path d="M30 6v8h8M18 24h14M18 31h14M18 38h9" /></svg>
+                </span>
+              ) : it.type === 'video' ? (
+                <span class="post__video-thumb">
+                  {/* YouTube 썸네일을 못 불러오면 재생 아이콘만 보입니다 */}
+                  <img src={it.image?.src} alt="" loading="lazy" decoding="async" onerror="this.remove()" />
+                  <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" /><path d="M20 16v16l13-8z" /></svg>
+                </span>
+              ) : (
+                <Img src={it.image?.src} alt={it.image?.alt || it.title} ratio="4 / 3" focus={it.image?.focus} />
+              )}
+              <div class="post__meta">
+                <span class:list={['tag', `tag--${it.type}`]}>{it.typeLabel}</span>
+                {it.date && <time datetime={it.datetime}>{it.date}</time>}
+                {it.type === 'gallery' && it.count ? <span>사진 {it.count}장</span> : null}
+              </div>
+              <h3><a href={url(it.href)}>{it.title}</a></h3>
+              {it.summary && <p>{it.summary}</p>}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div class="empty"><p>아직 등록된 게시물이 없습니다.</p></div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
